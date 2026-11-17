@@ -1,7 +1,7 @@
 # ROADMAP — MallaTierra
 
 > **Versión:** 0.1 — planificación inicial.  
-> **Documento rector:** [README.md](./README.md).  
+> **Documento rector:** [README.md](./README.md). Bitácora de continuidad: [AVANCE.md](./AVANCE.md).  
 > **Estado global:** planificación. **No se ha iniciado la lectura detallada de IEEE Std 80.**  
 > **Orden:** las etapas se cierran con evidencia, no solo con código. **La etapa 10, optimizador del diseño físico, es la última.**
 
@@ -20,10 +20,10 @@
 |---|---|
 | Etapa activa | 0 — Definición y preparación |
 | Última revisión | 2026-11-17 |
-| Entregables iniciales | `README.md` y `ROADMAP.md` en versión de planificación |
+| Entregables iniciales | `README.md`, `ROADMAP.md` y `AVANCE.md` en GitHub público (documentación de planificación) |
 | Bloqueo principal | Falta recibir y verificar edición del PDF IEEE Std 80 |
 | Otra decisión pendiente | Delimitar el primer tipo de instalación |
-| Próximo paso | Revisar estos documentos y preparar el estudio detallado de la norma |
+| Próximo paso | Completar la seguridad y las definiciones pendientes de la etapa 0; posteriormente estudiar IEEE Std 80 |
 
 ## Etapa 0 — Definición, repositorio y seguridad de base
 
@@ -32,7 +32,7 @@
 - [x] Documentar el objetivo, la arquitectura inicial y los límites del proyecto en `README.md`.
 - [x] Ordenar el desarrollo en etapas verificables en `ROADMAP.md`.
 - [ ] Confirmar el primer campo de aplicación (tipo de instalación) y sus límites.
-- [ ] Crear el repositorio **público** con un nombre definitivo o provisional y estructura mínima.
+- [x] Crear el repositorio **público** con un nombre definitivo o provisional y estructura mínima ([Prowess6117/c-oSPT](https://github.com/Prowess6117/c-oSPT), rama `main`).
 - [ ] Preparar `.gitignore`, licencia adecuada para código propio, política básica de contribución y revisión de secretos.
 - [ ] Determinar tratamiento de datos reales: ubicación, mediciones, nombres de clientes, informes y archivos exportados.
 - [ ] Documentar un procedimiento para cambios (`branch`/PR o equivalente), pruebas y revisiones de seguridad antes de publicar.
