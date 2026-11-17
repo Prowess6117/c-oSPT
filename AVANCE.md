@@ -3,10 +3,10 @@
 > **Proyecto / repositorio:** [c-oSPT](https://github.com/Prowess6117/c-oSPT)  
 > **Nombre funcional provisional:** MallaTierra  
 > **Última actualización:** 2026-11-17  
-> **Etapa activa:** 0 — Definición, repositorio y seguridad de base (**EN CURSO; 7/8 tareas verificadas documentalmente**)  
+> **Etapa activa:** etapa 0 **CERRADA DOCUMENTALMENTE CON EXCEPCIONES REGISTRADAS**; próxima etapa 2, **NO INICIADA**.  
 > **Etapa 1 — estudio normativo:** CERRADA DOCUMENTALMENTE (solo subalcance de método definido; no motor ni validación integral)  
 > **Cálculos del motor implementados y validados:** NINGUNO; únicamente pruebas matemáticas exploratorias externas al motor  
-> **Naturaleza del documento:** síntesis de continuidad; no es una transcripción completa del chat.
+> **Naturaleza del documento:** síntesis de continuidad; no es una transcripción completa del chat. Ver [BACKUP_DOCUMENTAL.md](./BACKUP_DOCUMENTAL.md) para recuperar la línea base y las excepciones.
 
 ## 1. Para qué existe este archivo
 
@@ -34,7 +34,7 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 
 1. Se creó y conectó el repositorio público **[Prowess6117/c-oSPT](https://github.com/Prowess6117/c-oSPT)**, rama principal `main`.
 2. `README.md` y `ROADMAP.md` se subieron correctamente y su presencia fue comprobada directamente en GitHub.
-3. La **etapa 0 está parcialmente realizada**, no finalizada: se documentaron objetivos y etapas y se creó el repositorio, pero faltan medidas y definiciones indicadas en ROADMAP.
+3. **Estado vigente de etapa 0:** cerrada **documentalmente con excepciones** según el hito de cierre 2026-11-17 y [BACKUP_DOCUMENTAL.md](./BACKUP_DOCUMENTAL.md). La antigua situación de «etapa 0 parcial» fue superada solo a efectos de planificación; protección GitHub, privacidad de correo y auditoría histórica exhaustiva siguen sin resolverse.
 4. El usuario aportó **IEEE Std 80-2013 con Cor 1-2015** (ejemplar publicado 15-05-2015) e **IEEE Std 81-2012**, además de RIC N°06 y RPTD N°06. Ninguno de los PDF se publicó en GitHub.
 5. **Actualización vigente:** la etapa 1 fue **cerrada documentalmente solo para el subalcance limitado** (véase hito de cierre posterior en esta misma bitácora); **no** hay motor implementado ni validación computacional integral. Las notas previas de «etapa 1 iniciada» corresponden a un estado histórico anterior.
 6. No se subieron archivos de normas, mediciones reales, expedientes técnicos, credenciales ni datos privados al repositorio en esta preparación documental.
@@ -51,6 +51,8 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 | DEC-06 | Generar informes auditables, sin atribuir certificación IEEE/SEC a la aplicación | **Definido para planificación** |
 | DEC-07 | Mantener el optimizador geométrico como **etapa final 10** | **Confirmado** |
 | DEC-08 | Mantener un resumen público de progreso, sin copiar conversaciones completas ni datos sensibles | **Confirmado** |
+| DEC-09 | Cierre documental de etapa 0 con control administrativo omitido temporalmente por decisión del propietario | **Confirmado con riesgos SEC-00-01/04 sin mitigar** |
+| DEC-10 | Mantener un respaldo documental anclado a commit verificable y no inventar mitigaciones | **Confirmado** |
 
 ## 5. Pendientes y límites NO confirmados
 
@@ -163,13 +165,23 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 
 **Advertencia jurídica y técnica:** una licencia personalizada puede requerir revisión legal, y las claves de una PWA pública no impedirán por sí solas modificaciones del código. No se promete protección absoluta de propiedad intelectual.
 
+## 7 octies. Cierre documental condicionado de etapa 0 y respaldo — 2026-11-17
+
+**Decisión expresa del propietario:** ante la complejidad de los ajustes administrativos, **omitir provisionalmente protección de `main` y otros controles de cuenta** para no bloquear el avance del desarrollo. Registrar etapa 0 como **CERRADA DOCUMENTALMENTE CON EXCEPCIONES**, no como «seguridad informática completamente implementada». El cierre por aceptación de riesgo **no se trasladará a criterios de conformidad eléctrica**.
+
+**Verificaciones adicionales antes del cierre:** 21 archivos actuales de `main` revisados, sin archivos PDF normativos/planillas/llaves por extensión ni patrones evidentes de tokens o correo en su contenido; enlaces internos sin rutas rotas; nombres de archivos modificados en los 32 commits disponibles revisados sin extensiones sospechosas; 2 PR anteriores fusionados; `main` sigue `protected: false` y existe correo potencialmente personal en metadata histórica. **No hubo revisión forense de todos los blobs históricos ni comprobación de secret scanning**. La conexión GitHub permite archivos/PR pero no configurar reglas de rama ni privacidad de cuenta; Work no es ejecutable desde esta sesión mediante herramienta disponible.
+
+**Respaldo creado:** [BACKUP_DOCUMENTAL.md](./BACKUP_DOCUMENTAL.md), con enlaces inmutables a la base estudiada y riesgos **SEC-00-01/04**. También se armonizaron README/ROADMAP/AVANCE para evitar estados contradictorios. Se conserva la etapa 1 cerrada solo como **estudio normativo documental acotado**, sin motor computacional, y la etapa 10 como optimizador final.
+
+**Dictamen:** **8/8 tareas registradas** como resueltas/documentadas o exceptuadas expresamente; etapa 0 **cerrada para planificación**, pero su **criterio original de seguridad no está demostrado íntegramente**. Antes de distribuir una herramienta de ingeniería operativa deberán revisarse las excepciones y condiciones técnicas de seguridad.
+
 ## 8. Próximos pasos (máximo cinco)
 
-1. **Licencia definida:** verificar LICENSE.md y futuro diseño de claves; canal privado de solicitud aún por definir (sin publicar contactos personales).
-2. Ajustar privacidad del correo de autor y bloqueo de pushes que lo expongan en GitHub; los metadatos históricos requieren evaluación separada.
-3. Proteger `main` y comprobar secret scanning/rulesets, sin imponer checks de CI inexistentes ni requisitos que impidan mantener un repositorio personal.
-4. Revisar historial y evidencias de seguridad; cerrar la última casilla de etapa 0 solo con controles confirmados.
-5. Mantener estudio documental limitado de etapa 1; después etapa 2 para modelo de datos. Motor matemático aún inexistente, optimizador solo etapa 10.
+1. **Comenzar etapa 2** solo con definición de datos, unidades, contratos, estados de validez y reglas de bloqueo; aún no hay motor validado.
+2. Mantener vigente el alcance limitado de subestaciones exteriores CA, suelo uniforme justificado y reticulado regular; no usar estudio de etapa 1 como certificación del motor.
+3. Antes de cualquier distribución ejecutable, revisar riesgos **SEC-00-01/04** documentados en [BACKUP_DOCUMENTAL](./BACKUP_DOCUMENTAL.md), incluida privacidad del correo, protección de `main`, secret scanning y límites de licenciamiento en cliente web.
+4. Mantener licencia beta reservada con autorización educativa/personal y permiso escrito comercial; claves futuras sin implementar, nunca secretas en repositorio.
+5. Registrar cambios y pruebas reproducibles; actualizar ROADMAP y AVANCE, y añadir otro respaldo anclado a commit cuando se complete un hito importante.
 
 ## 9. Procedimiento de «backup» de continuidad
 
@@ -199,7 +211,7 @@ Siguiente acción concreta:
 
 ## 10. Ficha corta para abrir un nuevo chat
 
-> Trabajaremos en el proyecto **c-oSPT**, repositorio público: https://github.com/Prowess6117/c-oSPT. Lee primero **README.md**, **ROADMAP.md** y **AVANCE.md** en la rama `main`. Se desarrolla una PWA personal, local-first, para calcular y verificar mallas de puesta a tierra mediante procedimientos verificables de **IEEE Std 80** y normativa chilena aplicable, con informe técnico auditable. Los datos de proyectos reales no se publican. Resistividad: inicialmente IP2Win/alternativa y contraste Excel. **Etapa 0 en curso**; **etapa 1 cerrada documentalmente solo para el subalcance de suelo uniforme y mallas regulares** al 2026-11-17. PDFs de IEEE80-2013/Cor1-2015, IEEE81-2012, RIC06 y RPTD06 recibidos sin publicar; usar matriz/acta en `docs/estudios/`, mantener etapa 0 abierta y no declarar validación del motor. El **optimizador de dimensiones y reticulado** es la última etapa. No marcar tareas como concluidas sin evidencia. Registrar cambios y actualizar AVANCE/ROADMAP al cerrar cada sesión importante.
+> Trabajaremos en el proyecto **c-oSPT**, repositorio público: https://github.com/Prowess6117/c-oSPT. Lee primero **README.md**, **ROADMAP.md** y **AVANCE.md** en la rama `main`. Se desarrolla una PWA personal, local-first, para calcular y verificar mallas de puesta a tierra mediante procedimientos verificables de **IEEE Std 80** y normativa chilena aplicable, con informe técnico auditable. Los datos de proyectos reales no se publican. Resistividad: inicialmente IP2Win/alternativa y contraste Excel. **Etapa 0 cerrada documentalmente CON EXCEPCIONES SEC-00-01/04**; **etapa 1 cerrada documentalmente solo para el subalcance de suelo uniforme y mallas regulares** al 2026-11-17. **Próxima etapa 2 NO INICIADA**. PDFs de IEEE80-2013/Cor1-2015, IEEE81-2012, RIC06 y RPTD06 recibidos sin publicar; usar matriz/acta en `docs/estudios/`, mantener etapa 0 abierta y no declarar validación del motor. El **optimizador de dimensiones y reticulado** es la última etapa. No marcar tareas como concluidas sin evidencia. Registrar cambios y actualizar AVANCE/ROADMAP al cerrar cada sesión importante.
 
 ---
 
