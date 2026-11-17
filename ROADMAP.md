@@ -1,6 +1,6 @@
 # ROADMAP — MallaTierra
 
-> **Versión:** 0.3 — políticas y revisión de etapa 0; estudio de etapa 1 preservado.  
+> **Versión:** 0.4 — licencia beta restrictiva y decisión sobre claves; etapa 0 pendiente de ajustes GitHub.  
 > **Documento rector:** [README.md](./README.md). Bitácora de continuidad: [AVANCE.md](./AVANCE.md).  
 > **Estado global:** etapa 0 ABIERTA; etapa 1 CERRADA solo como estudio documental acotado; etapas 2–10 SIN INICIAR. Sin motor implementado ni validado.  
 > **Orden:** las etapas se cierran con evidencia, no solo con código. **La etapa 10, optimizador del diseño físico, es la última.**
@@ -21,9 +21,9 @@
 | Etapa activa | 0 — Definición y preparación |
 | Última revisión | 2026-11-17 — auditoría y políticas operativas de etapa 0 |
 | Entregables iniciales | `README.md`, `ROADMAP.md` y `AVANCE.md` en GitHub público (documentación de planificación) |
-| Bloqueo principal | Etapa 0: decisión de licencia y ajustes operativos de GitHub (correo de autor, protección de rama, revisión de secretos/historial). Motor inexistente. |
-| Otra decisión pendiente | Licencia pública del código o conservación de todos los derechos; confirmación de privacidad de cuenta |
-| Próximo paso | Verificar revisión/merge de política de etapa 0, elegir licencia y completar controles GitHub con el propietario; luego cerrar etapa 0 antes de etapa 2 |
+| Bloqueo principal | Etapa 0: ajustes operativos de GitHub (correo de autor, protección de rama, revisión de secretos/historial). La licencia beta restrictiva ya está definida; motor inexistente. |
+| Otra decisión pendiente | Licencia definida: reservada con uso personal/educativo autorizado y comercial solo con permiso escrito; aún sin claves implementadas. Verificar privacidad de cuenta. |
+| Próximo paso | Verificar documentación de licencia, configurar protección de main y privacidad de correo, comprobar seguridad/historial; cerrar etapa 0 solo con evidencia. |
 
 ## Etapa 0 — Definición, repositorio y seguridad de base
 
@@ -33,7 +33,7 @@
 - [x] Ordenar el desarrollo en etapas verificables en `ROADMAP.md`.
 - [x] Confirmar el primer campo de aplicación (tipo de instalación) y sus límites, conforme a [alcance inicial acotado](./docs/ETAPA0_ALCANCE_INICIAL.md); no equivale a verificar instalaciones reales.
 - [x] Crear el repositorio **público** con un nombre definitivo o provisional y estructura mínima ([Prowess6117/c-oSPT](https://github.com/Prowess6117/c-oSPT), rama `main`).
-- [ ] Preparar `.gitignore`, licencia adecuada para código propio, política básica de contribución y revisión de secretos: **parcial**; `.gitignore`, [SECURITY](./SECURITY.md), [CONTRIBUTING](./CONTRIBUTING.md) y [auditoría preliminar](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md) documentados. **Pendiente licencia elegida por propietario, ajustes de privacidad/protección en GitHub y comprobación suficiente de historial/secretos**.
+- [ ] Preparar `.gitignore`, licencia adecuada para código propio, política básica de contribución y revisión de secretos: **parcial**; `.gitignore`, [SECURITY](./SECURITY.md), [CONTRIBUTING](./CONTRIBUTING.md) y [auditoría preliminar](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md) documentados. **LICENCIA BETA DEFINIDA** en [LICENSE.md](./LICENSE.md) y [política de claves](./docs/LICENCIAS_Y_ACTIVACION.md); **pendientes** ajustes de privacidad/protección en GitHub y comprobación suficiente de historial/secretos.
 - [x] Determinar tratamiento de datos reales: ubicación, mediciones, nombres de clientes, informes y archivos exportados ([política de datos](./docs/POLITICA_DATOS.md)); implementación de controles técnicos corresponde a etapas posteriores.
 - [x] Documentar un procedimiento para cambios (`branch`/PR o equivalente), pruebas y revisiones de seguridad antes de publicar ([CONTRIBUTING.md](./CONTRIBUTING.md)); protección efectiva de `main` aún pendiente.
 - [x] Registrar decisiones tecnológicas solo después de compararlas con alternativas simples ([ADR-0001](./docs/ADR-0001_ARQUITECTURA_INICIAL.md)); versiones de herramientas y dependencias se evaluarán en etapa 2.
@@ -41,7 +41,7 @@
 **Entregable:** repositorio limpio y documentación de alcance/seguridad.  
 **Criterio de cierre:** no hay información privada ni normas protegidas en el repositorio; se conocen el público objetivo, el campo de aplicación inicial y las reglas de trabajo.
 
-**Estado tras auditoría 2026-11-17:** **7/8 tareas registradas como completas; etapa 0 ABIERTA.** La única casilla abierta agrupa controles que requieren decisión/configuración del propietario; se documentaron exclusiones, política de datos, proceso de cambios y arquitectura. La revisión por patrones del árbol vigente es limitada y no acredita ausencia de secretos en todo el historial. Véase [auditoría](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md).
+**Estado 2026-11-17:** **7/8 tareas registradas como completas; etapa 0 ABIERTA.** La licencia beta ya quedó definida; la última casilla permanece abierta por ajustes de GitHub y comprobaciones de seguridad aún sin evidencia suficiente. Se documentaron exclusiones, política de datos, proceso de cambios y arquitectura. La revisión por patrones del árbol vigente es limitada y no acredita ausencia de secretos en todo el historial. Véase [auditoría](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md).
 
 ## Etapa 1 — Lectura técnica y matriz normativa IEEE Std 80
 
@@ -108,6 +108,7 @@ Se publicó y cotejó en `main` el [conocimiento consolidado](./docs/estudios/CO
 - [ ] Modelar escenarios, geometría, restricciones de terreno, suelo, falla, materiales, electrodos y versiones normativas.
 - [ ] Diseñar estados de validación: `cumple`, `no cumple`, `no evaluable`, `fuera de alcance`.
 - [ ] Diseñar formato estructurado y versionado para exportar/importar proyectos, sin datos privados de muestra.
+- [ ] Definir interfaz del futuro control de licencia/autoridades de uso **separada del motor matemático**, conforme a [licencias y activación](./docs/LICENCIAS_Y_ACTIVACION.md); sin claves reales ni permisos implícitos.
 - [ ] Crear una interfaz mínima, **sin afirmar resultados todavía**, para recorrer entradas, avisos y errores.
 - [ ] Elegir e instalar herramientas de pruebas, análisis estático y control de dependencias, tras revisión de seguridad.
 
@@ -218,6 +219,7 @@ Se publicó y cotejó en `main` el [conocimiento consolidado](./docs/estudios/CO
 - [ ] Documentar límites de seguridad en computadores compartidos, navegadores comprometidos y extensiones.
 - [ ] Probar build, pruebas automáticas y despliegue desde una instalación limpia, sin tokens embebidos en cliente.
 - [ ] Decidir por separado si habilitar GitHub Pages o mantener uso local, según el resultado de la auditoría.
+- [ ] Implementar y probar licencias por clave para **personal/educativa** y **comercial**, si se mantiene el esquema, antes de distribuir una versión utilizable; emitir claves fuera del repositorio, verificar firma y modalidad, sin secretos en cliente y documentar límites de elusión/revocación. El permiso comercial escrito es adicional a la clave.
 - [ ] Etiquetar una versión estable del motor y del generador de informes como **línea base para el optimizador**.
 
 **Entregable:** versión base publicada o lista para ejecutar localmente, con procedimiento de actualización y amenazas conocidas.  
@@ -271,6 +273,9 @@ Se publicó y cotejó en `main` el [conocimiento consolidado](./docs/estudios/CO
 | D-05 | Persistencia de casos y cifrado | **PENDIENTE** | Evaluar modelo de amenazas y flujo de archivos |
 | D-06 | Alojamiento en GitHub Pages | **CONDICIONAL** | Solo tras auditoría de etapa 9 |
 | D-07 | Alcance de optimización geométrica | **PENDIENTE** | Depende del motor y dominio de fórmulas ya validados |
+| D-08 | Licencia beta y modalidades | **DEFINIDA — DOCUMENTAL** | [LICENSE.md](./LICENSE.md): derechos reservados, personal/educativa autorizada, comercial solo con permiso escrito |
+| D-09 | Activación por claves de ambas modalidades | **PENDIENTE DE IMPLEMENTACIÓN** | [Política técnica](./docs/LICENCIAS_Y_ACTIVACION.md); sin motor, claves ni controles operativos |
+| D-10 | Protección GitHub main y correo del autor | **PENDIENTE DE AJUSTES** | Requiere permisos de administración no expuestos por conexión actual |
 
 ## Plantilla para cada sesión de avance
 
