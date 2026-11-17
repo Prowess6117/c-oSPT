@@ -21,12 +21,12 @@
 ## Configuraciones reales pendientes del propietario
 1. **Privacidad correo:** en GitHub Settings > Emails, habilitar Keep my email addresses private y Block command line pushes that expose my email. Configurar correo noreply en futuros commits; revisar el historial existente por separado.
 2. **Protección main:** Repository Settings > Branches o Rules > Rulesets; bloquear force pushes y borrados; establecer Pull Request como vía normal. No activar checks obligatorios inexistentes.
-3. **Licencia:** decidir entre una licencia concreta de código abierto (por ejemplo MIT/Apache-2.0, tras leer términos) o mantener derechos reservados sin licencia pública. **Sin LICENSE, el código visible no se convierte automáticamente en open source**. No elegir por cuenta ajena.
+3. **Licencia:** DECISIÓN POSTERIOR REGISTRADA: derechos reservados mediante [LICENSE.md](../LICENSE.md), personal/educativa autorizada y comercial con permiso escrito. Claves planificadas pero no implementadas. Se recomienda revisión jurídica del texto de licencia personalizada antes de distribución utilizable.
 4. **Secret scanning:** consultar las funciones disponibles en Security/Settings, activar y verificar alertas/protección de push cuando sea posible.
 5. **Auditoría histórica:** revisar commits anteriores, especialmente el correo de autor; reescribir historial requiere una evaluación de impactos y no garantiza borrar copias replicadas.
 
 ## Criterio de cierre pendiente
-La etapa 0 no puede cerrarse de manera rigurosa solo porque los documentos existan: falta la decisión de licencia y confirmar controles de GitHub y seguridad del historial. Tampoco se puede presentar la revisión por patrones como prueba definitiva.
+La etapa 0 no puede cerrarse solo porque los documentos existan: la licencia beta ya está definida, pero falta confirmar controles efectivos de GitHub y seguridad del historial. Tampoco se puede presentar la revisión por patrones como prueba definitiva.
 
 Documentación oficial útil:
 - https://docs.github.com/en/account-and-profile/how-tos/email-preferences/blocking-command-line-pushes-that-expose-your-personal-email-address
