@@ -2,6 +2,21 @@
 
 **Fecha:** 2026-11-17. **Fuente primaria:** ejemplar adjunto de *IEEE Std 80-2013*, publicado 2015-05-15, que incorpora *IEEE Std 80-2013/Cor 1-2015*. **Estado:** inconsistencias aritméticas **explicadas y reproducidas** mediante sustituciones y contrapruebas; **NO** hay confirmación de errata oficial por IEEE ni validación integral del motor c-oSPT. **No copiar el PDF normativo al repositorio público.**
 
+## Aclaración normativa crítica: Cor 1-2015 ya incorporado
+
+**Corrección de nuestra revisión documental (2026-11-17).** El PDF utilizado **no es la edición sin corregir**: su portada identifica `IEEE Std 80-2013/Cor 1-2015` incorporado. Su introducción, **página preliminar x / página 12 del archivo**, confirma que el corrigendum realizó cambios en las cláusulas **11 y 17**, los anexos **C y H**, las **tablas 1 y 2**, dos ecuaciones posteriores a la figura 45; **sustituyó la tabla H.5** e **incorporó las tablas H.6–H.10**. IEEE SA lo denomina un corrigendum **no publicado como documento separado, sino incorporado** al texto de IEEE 80-2013. Fuente institucional: [ficha IEEE 80-2013/Cor 1-2015](https://standards.ieee.org/ieee/C37.09/5939/) y [IEEE 80-2013](https://standards.ieee.org/ieee/80/4089/).
+
+**Consecuencia:** el hecho de que el corrigendum modifique las secciones **NO demuestra por sí solo** que haya corregido los números concretos detectados en **B.1** o **H.3**. El PDF **posterior a Cor 1** que efectivamente usamos **todavía imprime**:
+- **B.1 / página impresa 131, PDF 147:** `I=6,814 kA` y resultado de conductor cobre-acero `59,81 kcmil`; se reproduce esta salida al introducir `6,184 kA`, no al usar 6,814 kA.
+- **H.3 / página impresa 199, PDF 215:** corriente declarada para todos los casos `I_G=744,8 A`.
+- **H.5 / página impresa 200, PDF 216:** `E_m=232 V`, `E_s=96 V` (tabla **reemplazada en Cor 1**).
+- **H.6 / página impresa 201, PDF 217:** `E_m=163 V`, `E_s=80 V` (tabla **incorporada por Cor 1**).
+- Las tensiones H.5 y H.6 anteriores se reproducen con `780 A` en las ecuaciones simplificadas, pero **no debe inferirse de ello cómo o por qué se generó el error editorial**.
+
+**Limitación de comparación:** el listado de cambios de la introducción y la ficha pública de IEEE **no desglosan las sustituciones numéricas específicas**. No se verificó el texto original sin integrar (2013) contra un listado redline de Cor 1. Por tanto, **no se puede afirmar** que Cor 1 corrigiera específicamente `59,81` ni `744,8/780`, ni se puede sostener que estos datos sean una errata oficialmente admitida. La afirmación válida es: **las inconsistencias matemáticas subsisten en el ejemplar que ya incorpora Cor 1**.
+
+Esta omisión de contraste explícito con el corrigendum en el diagnóstico inicial fue una **deficiencia del proceso de revisión**, no una omisión del archivo Cor 1 en el cálculo. Para futuras auditorías, registrar siempre la condición **pre/post-corrigendum** antes de atribuir errores a la publicación.
+
 ## Método de comprobación
 
 1. Inspección visual directa de las páginas originales, para descartar pérdida de radicales, subíndices y exponentes en la extracción textual.
