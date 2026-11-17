@@ -4,8 +4,8 @@
 > **Nombre funcional provisional:** MallaTierra  
 > **Última actualización:** 2026-11-17  
 > **Etapa activa:** 0 — Definición, repositorio y seguridad de base (**EN CURSO; no cerrada**)  
-> **Inicio del estudio detallado de IEEE Std 80:** NO INICIADO  
-> **Cálculos implementados y validados:** NINGUNO  
+> **Inicio del estudio detallado de IEEE Std 80:** INICIADO (documentación exploratoria y contrastes parciales; no cerrado)  
+> **Cálculos del motor implementados y validados:** NINGUNO; únicamente pruebas matemáticas exploratorias externas al motor  
 > **Naturaleza del documento:** síntesis de continuidad; no es una transcripción completa del chat.
 
 ## 1. Para qué existe este archivo
@@ -35,8 +35,8 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 1. Se creó y conectó el repositorio público **[Prowess6117/c-oSPT](https://github.com/Prowess6117/c-oSPT)**, rama principal `main`.
 2. `README.md` y `ROADMAP.md` se subieron correctamente y su presencia fue comprobada directamente en GitHub.
 3. La **etapa 0 está parcialmente realizada**, no finalizada: se documentaron objetivos y etapas y se creó el repositorio, pero faltan medidas y definiciones indicadas en ROADMAP.
-4. El usuario **dispone de un ejemplar de IEEE Std 80**, pero **aún no lo ha aportado para lectura**; se compartirá después. No consta la edición exacta.
-5. **No se ha iniciado la etapa 1**, ni se han escrito fórmulas del motor, pruebas numéricas o código de la aplicación.
+4. El usuario aportó **IEEE Std 80-2013 con Cor 1-2015** (ejemplar publicado 15-05-2015) e **IEEE Std 81-2012**, además de RIC N°06 y RPTD N°06. Ninguno de los PDF se publicó en GitHub.
+5. **La etapa 1 está iniciada, NO cerrada**; hay matriz documental preliminar y pruebas exploratorias de ejemplos sintéticos, pero no se ha implementado el motor ni realizado validación técnica independiente integral.
 6. No se subieron archivos de normas, mediciones reales, expedientes técnicos, credenciales ni datos privados al repositorio en esta preparación documental.
 
 ## 4. Decisiones y criterios registrados
@@ -54,7 +54,7 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 
 ## 5. Pendientes y límites NO confirmados
 
-- **Edición, erratas, alcance y procedimientos concretos de IEEE Std 80:** no verificados; esperar el archivo y estudiarlo.
+- **Edición recibida:** IEEE Std 80-2013 con Cor 1-2015, confirmada en portada; quedan pendientes erratas posteriores, estudio exhaustivo de métodos/restricciones y controles normativos complementarios.
 - **Primer campo de aplicación:** subestaciones, instalaciones industriales/consumo u otros casos; pendiente de delimitar para no extender IEEE 80 fuera de su campo.
 - **Normativa chilena concreta, exigencias y numerales aplicables:** revisar RIC / RPTD y otros textos pertinentes sin inventar referencias.
 - **Herramientas de programación y pruebas:** no elegidas todavía.
@@ -79,6 +79,16 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 | 2026-11-17 | Se organizó la planificación en 11 etapas, numeradas 0–10 | [ROADMAP.md](./ROADMAP.md) |
 | 2026-11-17 | Se subieron README y ROADMAP al repositorio público | [Repositorio](https://github.com/Prowess6117/c-oSPT) |
 | 2026-11-17 | Se incorporó la bitácora pública de continuidad | Este archivo |
+
+## 7 bis. Hito técnico — 2026-11-17 (estudio preliminar, sin cierre)
+
+- **Fuente pública:** [Estudio normativo de IEEE 80, IEEE 81, RIC N°06 y RPTD N°06](./docs/estudios/ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md).
+- **Identificación bibliográfica:** IEEE Std 80-2013 incorporando Cor 1-2015; IEEE Std 81-2012. PDF recibidos y leídos localmente, **no subidos**.
+- **Trabajo efectuado:** matriz de dependencias y referencias para procedimientos de suelo, corriente de falla/reparto, límites tolerables, resistencia, GPR, tensiones de malla/paso, ensayos y obligaciones RIC/RPTD. Comprobaciones matemáticas exploratorias: diez contrastes de valores anexo B.1–B.4, un ejemplo Wenner, efecto de redondeo de C_s y ejemplo térmico de cobre.
+- **Resultado y cautela:** diez magnitudes B.1–B.4 con discrepancias de 0,038 % a 1,200 % respecto de valores editoriales; **no es prueba independiente de validación del motor**. Se identificó discrepancia aún sin explicación en otro cálculo térmico del anexo B.1 (59,81 vs ~65,90 kcmil). Debe estudiarse antes de utilizarlo como prueba.
+- **Cambios GitHub:** nuevo documento Markdown propio y registro de continuidad; ningún PDF, dato privado ni código numérico publicado.
+- **Pendientes:** cerrar etapa 0 (alcance/seguridad), examinar sistemáticamente correcciones y métodos, validar térmica/Schwarz/D_f/S_f/modelos estratificados/anexo H, obtener documentos chilenos complementarios y estudiar registros de mediciones; no desarrollar motor aún.
+- **Estado:** etapa 0 en curso; etapa 1 iniciada, **NO cerrada**; etapa 10 optimizador continúa como última etapa.
 
 ## 8. Próximos pasos (máximo cinco)
 
