@@ -1,5 +1,8 @@
 # c-oSPT — Estudio técnico documentado de puesta a tierra
 
+
+**Actualización 2026-11-17:** inconsistencias B.1 y H.3 explicadas matemáticamente mediante análisis inverso y dos mallas. [Ver diagnóstico](./DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md). Las interpretaciones previas como «no resueltas» quedan sustituidas por este diagnóstico. Confirmación editorial oficial aún pendiente.
+
 **Fecha de elaboración:** 2026-11-17  
 **Estado:** estudio técnico inicial avanzado; **NO constituye validación de un motor de cálculo, aprobación de ingeniería ni cierre de la etapa 1**.  
 **Etapa:** 1 (en estudio), con etapa 0 aún abierta.  
@@ -140,7 +143,7 @@ La presentación matemática observada visualmente en **C-RPTD p. 4, §§5.1–5
 
 ### 6.6. Veredicto técnico de este conjunto de pruebas
 
-- **Reproducción algebraica exploratoria:** 10 comparaciones numéricas N-80 B.1–B.4 dentro de **2 % definido para este ensayo**; identidad Wenner e identificación explícita del redondeo de `C_s` completadas; un cálculo térmico de cobre coincide, mientras que el de cobre-acero presenta discrepancia **no resuelta** (§6.7).
+- **Reproducción algebraica exploratoria:** 10 comparaciones numéricas N-80 B.1–B.4 dentro de **2 % definido para este ensayo**; identidad Wenner e identificación explícita del redondeo de `C_s` completadas; un cálculo térmico de cobre coincide, mientras que en el caso cobre-acero se demostró que 59,81 kcmil corresponde a I=6,184 kA y no a 6,814 kA (§6.7; ver diagnóstico posterior).
 - **Aún NO demostrado:** validez de Schwarz, dimensionamiento térmico integral por distintos materiales, `D_f` por X/R, reparto complejo `S_f`, problemas de dos/múltiples capas, mallas no regulares, tensión transferida, GIS, cercos, ensayos de campo o conformidad integral con SEC.
 - **Interpretación de seguridad:** el ejemplo B.1 **no** satisface su criterio de tensión de malla; los refinamientos posteriores ilustran el procedimiento didáctico, pero no aprueban ningún diseño real de c-oSPT. Una medición de resistencia y las verificaciones de transferencia/zonas críticas se requieren según caso.
 
@@ -148,7 +151,7 @@ La presentación matemática observada visualmente en **C-RPTD p. 4, §§5.1–5
 
 Se hizo una **segunda comprobación aritmética**, independiente de las diez comparaciones de `R_g`, `E_m` y `E_s`, sobre la **N-80 §11.3.1.3, ecuación (47), y anexo B.1, p. 131**. Con los datos expresos del ejemplo (`I=6,814 kA`, `K_f=7,06`, `t_c=0,5 s`, cobre comercial), se obtiene **34,01667 kcmil** o **17,2365 mm²**, coherente con el valor editorial **34,02 kcmil / 17,2 mm²**. Esa comprobación **no** cubre dimensionamiento mecánico, corrosión ni condiciones normativas chilenas.
 
-**Hallazgo pendiente — no corregir silenciosamente:** al sustituir literalmente los parámetros que aparecen impresos en la alternativa de **acero recubierto de cobre de conductividad 30 %** (N-80 §11.3.1.2, ec. (46), y anexo B.1 ec. (B.3), p. 131): `I=6,814 kA`, `t_c=0,5 s`, `TCAP=3,85 J/(cm³·°C)`, `α_r=0,00378 1/°C`, `ρ_r=5,862 µΩ·cm`, `K_o=245 °C`, `T_m=700 °C`, `T_a=40 °C`, la aplicación directa de la ecuación (46) con radical cubriendo el producto térmico y logarítmico entrega **≈65,90 kcmil (≈33,39 mm²)**, mientras que el anexo B.1 imprime **59,81 kcmil (30,24 mm²)**. Se inspeccionó visualmente la fórmula en la página, no solamente la extracción de texto. **No se determinó el origen de la discrepancia** (posible errata, dato redondeado, transcripción editorial u otra condición) y **no se incorporará ninguna de ambas cifras como prueba de aceptación** hasta una verificación adicional contra tablas/materiales y/o fuente independiente. No suponer que la discrepancia queda resuelta por parecer pequeña.
+**Hallazgo original, resuelto aritméticamente en diagnóstico posterior:** al sustituir literalmente los parámetros que aparecen impresos en la alternativa de **acero recubierto de cobre de conductividad 30 %** (N-80 §11.3.1.2, ec. (46), y anexo B.1 ec. (B.3), p. 131): `I=6,814 kA`, `t_c=0,5 s`, `TCAP=3,85 J/(cm³·°C)`, `α_r=0,00378 1/°C`, `ρ_r=5,862 µΩ·cm`, `K_o=245 °C`, `T_m=700 °C`, `T_a=40 °C`, la aplicación directa de la ecuación (46) con radical cubriendo el producto térmico y logarítmico entrega **≈65,90 kcmil (≈33,39 mm²)**, mientras que el anexo B.1 imprime **59,81 kcmil (30,24 mm²)**. Se inspeccionó visualmente la fórmula en la página, no solamente la extracción de texto. **Se comprobó posteriormente** que 59,81 kcmil corresponde a 6,184 kA, una transposición del dato de 6,814 kA. El valor coherente con las entradas impresas es 65,905 kcmil; no se presenta como corrección oficial IEEE. Ver diagnóstico enlazado.
 
 Este hallazgo demuestra por qué los resultados publicados deben someterse a comprobación aritmética y por qué **coincidir con un ejemplo no equivale automáticamente a validar todos los métodos**.
 
@@ -165,7 +168,7 @@ Este hallazgo demuestra por qué los resultados publicados deben someterse a com
 | R-07 | Suponer que IEEE y normativa chilena tienen igual rango jurídico | Clasificar instalación; leer remisiones de RIC/RPTD; registrar interpretación y fuentes oficiales. |
 | R-08 | Subir normas, estudios reales, credenciales o ubicación | GitHub: únicamente documentación propia y datos ficticios; revisar diff/historial y secretos antes de cada publicación. |
 | R-09 | Crear falsa sensación de conformidad con pruebas de ejemplos | Mantener separado: recomputación de guía, comparación independiente, ensayos de campo y revisión profesional. |
-| R-10 | Discrepancia aritmética en dimensionamiento térmico cobre-acero del anexo B.1 | Mantener **NO RESUELTO** el contraste 59,81 frente a ≈65,90 kcmil; revisar edición/corrigendum y efectuar contraste independiente antes de codificar. |
+| R-10 | Consistencia editorial en dimensionamiento térmico B.1 | **RESUELTO matemáticamente**: 59,81 kcmil implica I=6,184 kA, incompatible con 6,814 kA declarados; valor coherente 65,905 kcmil. Confirmación institucional pendiente. |
 
 ## 8. Estado frente al ROADMAP y pendientes concretos
 
