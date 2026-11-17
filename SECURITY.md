@@ -23,7 +23,7 @@ Si se filtra una credencial: revocarla o rotarla en origen, suspender uso/public
 ## Pendientes que requieren configuración real
 - Protección de la rama main.
 - Privacidad del correo de commits y bloqueo de pushes que divulguen correo privado.
-- Selección expresa de licencia; público no es lo mismo que código libre.
+- Licencia beta **definida**, restrictiva y de derechos reservados ([LICENSE.md](./LICENSE.md)); las claves personal/educativa y comercial están **planificadas, no implementadas**.
 - Revisión del historial completo y activación de alertas de secretos si están disponibles.
 
 Véanse CONTRIBUTING.md, docs/POLITICA_DATOS.md y docs/ETAPA0_AUDITORIA_SEGURIDAD.md.

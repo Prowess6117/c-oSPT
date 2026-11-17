@@ -59,7 +59,7 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 - **Normativa chilena concreta, exigencias y numerales aplicables:** revisar RIC / RPTD y otros textos pertinentes sin inventar referencias.
 - **Arquitectura comparada:** PWA web estática local-first preferida según [ADR-0001](./docs/ADR-0001_ARQUITECTURA_INICIAL.md); versiones concretas y dependencias aún no elegidas.
 - **Mediciones, modelos geoléctricos, parámetros eléctricos, geometrías de cálculo, tolerancias y casos patrón:** aún no definidos.
-- **Política y exclusiones:** [datos](./docs/POLITICA_DATOS.md), `.gitignore`, [SECURITY](./SECURITY.md) y [CONTRIBUTING](./CONTRIBUTING.md) redactados. Persistencia/cifrado de la app sigue para etapas posteriores. **Pendiente** licencia, protección de `main`, privacidad de autor y auditoría suficiente de secretos/historial.
+- **Política y exclusiones:** [datos](./docs/POLITICA_DATOS.md), `.gitignore`, [SECURITY](./SECURITY.md) y [CONTRIBUTING](./CONTRIBUTING.md) redactados. **Licencia beta restrictiva definida** en [LICENSE.md](./LICENSE.md); claves por modalidad descritas en [documento de activación](./docs/LICENCIAS_Y_ACTIVACION.md), aún no implementadas. **Pendiente** protección de `main`, privacidad de autor y auditoría suficiente de secretos/historial.
 - **Publicación en GitHub Pages:** no aprobada; depende de futura auditoría de seguridad.
 - **Algoritmo del optimizador:** pendiente de análisis de fundamentos matemáticos, restricciones y validez del motor.
 
@@ -153,13 +153,23 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 
 **Próximas acciones externas:** elegir expresamente licencia o ausencia de licencia abierta; configurar correos `noreply` y privacidad de commits; proteger `main`; activar/comprobar controles de seguridad disponibles; volver a verificar y registrar el cierre antes de avanzar a etapa 2.
 
+## 7 septies. Condiciones de licencia beta definidas — 2026-11-17
+
+**Instrucción expresa del titular:** reservar los derechos del código, permitir modalidad personal/educativa **no comercial solo con autorización y futura clave**, y prohibir uso comercial durante beta salvo **permiso expreso escrito más clave comercial propia**. La herramienta sigue beta; cualquier resultado de ingeniería exige validación por un profesional competente, incluso cuando exista licencia.
+
+**Entregables:** [licencia restrictiva](./LICENSE.md), [política técnica de licencias/activación](./docs/LICENCIAS_Y_ACTIVACION.md), README y ROADMAP actualizados. **No** hay claves creadas ni mecanismo operativo; la emisión futura debe preservar local-first y mantener secretos de firma fuera de GitHub.
+
+**GitHub:** la conexión actual permite gestionar archivos, ramas y PR, pero **no ofrece acción para modificar las reglas de protección de `main` ni la privacidad del correo de la cuenta**. No afirmar que esas configuraciones cambiaron. Por seguridad, la etapa 0 sigue ABIERTA.
+
+**Advertencia jurídica y técnica:** una licencia personalizada puede requerir revisión legal, y las claves de una PWA pública no impedirán por sí solas modificaciones del código. No se promete protección absoluta de propiedad intelectual.
+
 ## 8. Próximos pasos (máximo cinco)
 
-1. Confirmar la licencia de código deseada o conservar derechos sin licencia abierta, con conocimiento de la consecuencia pública.
-2. Ajustar privacidad del correo de autor y bloqueo de pushes en GitHub; considerar metadatos de commits anteriores.
-3. Proteger la rama `main` y activar/revisar herramientas de alerta y protección de secretos disponibles.
-4. Verificar las acciones y la publicación de los archivos de etapa 0; cerrar la última casilla solo con evidencia.
-5. Mantener el cierre documental limitado de etapa 1 y luego pasar a etapa 2; **motor e informe no implementados**, optimizador reservado a etapa 10.
+1. **Licencia definida:** verificar LICENSE.md y futuro diseño de claves; canal privado de solicitud aún por definir (sin publicar contactos personales).
+2. Ajustar privacidad del correo de autor y bloqueo de pushes que lo expongan en GitHub; los metadatos históricos requieren evaluación separada.
+3. Proteger `main` y comprobar secret scanning/rulesets, sin imponer checks de CI inexistentes ni requisitos que impidan mantener un repositorio personal.
+4. Revisar historial y evidencias de seguridad; cerrar la última casilla de etapa 0 solo con controles confirmados.
+5. Mantener estudio documental limitado de etapa 1; después etapa 2 para modelo de datos. Motor matemático aún inexistente, optimizador solo etapa 10.
 
 ## 9. Procedimiento de «backup» de continuidad
 

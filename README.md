@@ -170,7 +170,13 @@ El material de investigación se conserva en `docs/estudios/`:
 - [ADR-0001 — Arquitectura y alternativas](./docs/ADR-0001_ARQUITECTURA_INICIAL.md): justificación de PWA local-first sin backend, elección detallada de stack diferida a etapa 2.
 - [Seguridad](./SECURITY.md), [procedimiento de cambios](./CONTRIBUTING.md) y [auditoría inicial](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md).
 
-**Estado de etapa 0:** siete de ocho tareas documentadas/realizadas; pendiente la tarea compuesta de licencia, controles de GitHub y revisión final de secretos. La visibilidad pública del código **no concede por sí misma una licencia abierta**. Antes del cierre se requieren decisiones y ajustes del propietario. Ninguna funcionalidad de cálculo está aprobada.
+**Estado de etapa 0:** siete de ocho tareas verificadas; la licencia restrictiva beta está documentada, pero faltan configuraciones efectivas de GitHub y la revisión final de seguridad/historial. La visibilidad pública **no concede una licencia abierta**. No existe todavía un mecanismo de activación ni una aplicación apta para ingeniería real.
+
+## 12. Licencia restrictiva beta y claves futuras
+
+**[LICENSE.md](./LICENSE.md): todos los derechos reservados, código públicamente visible pero no abierto.** El uso personal/educativo no comercial requiere autorización del titular y, cuando se implemente, una clave propia. El **uso comercial está prohibido por defecto en beta**, salvo permiso escrito expreso y licencia/clave comercial específica. Toda salida de la aplicación requerirá verificación independiente por profesional competente, aun si el software está licenciado.
+
+El sistema de claves está **solo planificado** en [licencias y activación](./docs/LICENCIAS_Y_ACTIVACION.md). En una PWA pública una clave de cliente no puede impedir totalmente que alguien modifique el código; no se publicarán claves privadas ni se prometerá protección absoluta. El motor científico y la validación tienen prioridad.
 
 ---
 
