@@ -62,7 +62,7 @@
 - **Documento publicado:** [Estudio IEEE 80/81 + RIC/RPTD y pruebas exploratorias](./docs/estudios/ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md).
 - **Identificado:** IEEE Std 80-2013, edición publicada en mayo de 2015 con Cor 1-2015; IEEE Std 81-2012; RIC N°06 y RPTD N°06 según copias adjuntas, sin subir los PDF.
 - **Pruebas exploratorias:** diez comparaciones numéricas del anexo B.1–B.4 (R_g, E_m, E_s), consistencia Wenner IEEE 81, efecto de redondeo de C_s y una comprobación de conductor de cobre. **No validan el motor ni certifican cumplimiento**.
-- **Hallazgo crítico abierto:** discrepancia aritmética de la alternativa de conductor cobre-acero del anexo B.1: valor publicado 59,81 kcmil frente a ≈65,90 kcmil al sustituir literalmente las constantes. No usarla como referencia de validación hasta resolverla.
+- **Hallazgo B.1 RESUELTO MATEMÁTICAMENTE tras investigación adicional:** 59,81 kcmil coincide con 6,184 kA, no con 6,814 kA declarados; con estos últimos se obtiene 65,905 kcmil. Registro y límites en [diagnóstico](./docs/estudios/DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md). Sin confirmación de errata oficial.
 - **Estado de cierre:** etapa 0 sigue abierta; etapa 1 iniciada pero NO cerrada. Mantener casillas pendientes hasta verificar todos sus criterios.
 
 ### Continuación de las verificaciones — 2026-11-17
@@ -71,7 +71,15 @@ Se publicó y cotejó en `main` el [conocimiento consolidado](./docs/estudios/CO
 
 **Comprobado con evidencia aritmética parcial:** térmica cobre ec. (47); `K_f` de 30 % cobre-acero a 1084 °C; cinco valores de `D_f` frente a tabla 10; reparto `S_f` en el ejemplo simplificado de §15.9; Schwarz sintético y consistencia de su matriz de resistencias; Wenner con control de profundidad y registros seleccionados de H.1; resistencia/GPR del benchmark H.3.1.
 
-**No resuelto / bloqueante:** resultado de cobre-acero del anexo B.1 (59,81 kcmil publicado frente a ≈65,905 de sustitución directa) y tensiones `E_m/E_s` del anexo H.3.1 (diferencia ≈4,5–4,7 % en reconstrucción). Siguen pendientes validaciones independientes, modelos de capas, factores de reparto de redes complejas, límites de dominio, casos especiales y correlato con normativa chilena. **No se marca cierre de etapa 0 ni etapa 1 y no se autorizan funciones de ingeniería.**
+**Actualización de los dos hallazgos:** **B.1 matemáticamente aclarado** (I=6,184 implícita frente a 6,814 kA declarada); **H.3 matemáticamente aclarado** (E_m/E_s publicados para I≈780 A frente a 744,8 A declarado; misma pauta en tablas H.5 y H.6). [Evidencia, ecuaciones y pruebas](./docs/estudios/DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md). La causa histórica/editorial y una fe de erratas oficial siguen sin confirmar. Persisten validaciones independientes, modelos de capas, reparto complejo, límites de dominio y normativa chilena. **Etapas 0 y 1 abiertas; sin motor aprobado.**
+
+### Cierre matemático de discrepancias documentales B.1/H.3 — 2026-11-17
+
+- [Diagnóstico de causa B.1 y H.3](./docs/estudios/DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md), con [script reproducible](./docs/estudios/diagnostico_inconsistencias_ieee80.py), publicado en `main`.
+- **B.1:** el valor impreso 59,81 kcmil corresponde a 6,184 kA (cifras transpuestas); a 6,814 kA la sección es 65,905 kcmil.
+- **H.3:** la introducción y figuras indican 744,8 A, pero las tensiones H.5/H.6 se reproducen con 780 A. Los GPR de ambas tablas sí son coherentes con 744,8 A; no alterar las ecuaciones para copiar los valores editoriales.
+- **Prueba documental:** inversión de datos, dos geometrías, redondeos y controles GPR; sin ecuaciones modificadas. Se consideran **explicadas las discrepancias matemáticas**, no ratificada la causa editorial oficial.
+- **Estado:** etapa 0 ABIERTA y etapa 1 EN CURSO por otros controles y validaciones pendientes; motor aún no implementado.
 
 ## Etapa 2 — Modelo de datos, flujo y prototipo mínimo
 
