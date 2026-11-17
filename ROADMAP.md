@@ -1,8 +1,8 @@
 # ROADMAP — MallaTierra
 
-> **Versión:** 0.1 — planificación inicial.  
+> **Versión:** 0.2 — actualización documentada de etapa 1.  
 > **Documento rector:** [README.md](./README.md). Bitácora de continuidad: [AVANCE.md](./AVANCE.md).  
-> **Estado global:** etapa 0 ABIERTA; etapa 1 EN ESTUDIO (documentos recibidos, lectura y comprobaciones parciales). Sin motor implementado ni validado.  
+> **Estado global:** etapa 0 ABIERTA; etapa 1 CERRADA solo como estudio documental acotado; etapas 2–10 SIN INICIAR. Sin motor implementado ni validado.  
 > **Orden:** las etapas se cierran con evidencia, no solo con código. **La etapa 10, optimizador del diseño físico, es la última.**
 
 ## Cómo usar este roadmap
@@ -21,9 +21,9 @@
 | Etapa activa | 0 — Definición y preparación |
 | Última revisión | 2026-11-17 |
 | Entregables iniciales | `README.md`, `ROADMAP.md` y `AVANCE.md` en GitHub público (documentación de planificación) |
-| Bloqueo principal | Se identificó IEEE Std 80-2013 con Cor 1-2015; pendientes estudio exhaustivo, validación independiente y delimitación de alcance |
+| Bloqueo principal | Pendientes de etapa 0: primer tipo de instalación formal, seguridad/privacidad del repositorio y proceso de cambios; ninguna función del motor está validada |
 | Otra decisión pendiente | Delimitar el primer tipo de instalación |
-| Próximo paso | Completar tareas de seguridad/alcance de etapa 0 y continuar estudio crítico IEEE Std 80 (§§11, 13–17), sin motor |
+| Próximo paso | Completar las cinco tareas de etapa 0 antes de abrir etapa 2; respetar dominios y bloqueos consignados en el cierre documental de etapa 1 |
 
 ## Etapa 0 — Definición, repositorio y seguridad de base
 
@@ -45,14 +45,14 @@
 
 **Objetivo:** comprender la norma antes de traducir ecuaciones a software.
 
-- [ ] Recibir el documento y verificar título, **edición**, correcciones y su procedencia.
-- [ ] Identificar objetivo, alcance, exclusiones, hipótesis y terminología de la edición recibida.
-- [ ] Levantar el flujo de cálculo y las dependencias entre variables (suelo, falla, geometría, conductor, resistencia, GPR, paso, contacto y demás verificaciones pertinentes).
-- [ ] Registrar ecuaciones, tablas, factores, restricciones y ejemplos **mediante referencias propias, sin copiar la norma protegida al repositorio**.
-- [ ] Distinguir procedimientos de aplicación general y casos que requieren condiciones especiales o métodos más avanzados.
-- [ ] Revisar relación y posibles diferencias con DS N.º 8/2019, pliegos RIC, DS N.º 109/2017, pliegos RPTD y otros documentos que realmente apliquen.
-- [ ] Crear una **matriz de trazabilidad normativa**: requisito/método → referencia exacta → entrada → salida → condición → futura prueba.
-- [ ] Identificar ejemplos de referencia legalmente utilizables y sus resultados esperados.
+- [x] Recibir el documento y verificar título, **edición**, correcciones y su procedencia.
+- [x] Identificar objetivo, alcance, exclusiones, hipótesis y terminología de la edición recibida.
+- [x] Levantar el flujo de cálculo y las dependencias entre variables (suelo, falla, geometría, conductor, resistencia, GPR, paso, contacto y demás verificaciones pertinentes).
+- [x] Registrar ecuaciones, tablas, factores, restricciones y ejemplos **mediante referencias propias, sin copiar la norma protegida al repositorio**.
+- [x] Distinguir procedimientos de aplicación general y casos que requieren condiciones especiales o métodos más avanzados.
+- [x] Revisar relación y posibles diferencias con DS N.º 8/2019, pliegos RIC, DS N.º 109/2017, pliegos RPTD y otros documentos que realmente apliquen.
+- [x] Crear una **matriz de trazabilidad normativa**: requisito/método → referencia exacta → entrada → salida → condición → futura prueba.
+- [x] Identificar ejemplos de referencia legalmente utilizables y sus resultados esperados.
 
 **Entregable:** matriz normativa y esquema trazable del método, con vacíos y asuntos por resolver.  
 **Criterio de cierre:** no quedan fórmulas propuestas sin identificación de su fuente y sus restricciones; cualquier vacío bloqueante está declarado.
@@ -80,6 +80,21 @@ Se publicó y cotejó en `main` el [conocimiento consolidado](./docs/estudios/CO
 - **H.3:** la introducción y figuras indican 744,8 A, pero las tensiones H.5/H.6 se reproducen con 780 A. Los GPR de ambas tablas sí son coherentes con 744,8 A; no alterar las ecuaciones para copiar los valores editoriales.
 - **Prueba documental:** inversión de datos, dos geometrías, redondeos y controles GPR; sin ecuaciones modificadas. Se consideran **explicadas las discrepancias matemáticas**, no ratificada la causa editorial oficial.
 - **Estado:** etapa 0 ABIERTA y etapa 1 EN CURSO por otros controles y validaciones pendientes; motor aún no implementado.
+
+### Acta de cierre documental de etapa 1 — 2026-11-17
+
+**Etapa 1 — CERRADA documentalmente para el subalcance técnico de estudio:** mallas regulares de subestaciones exteriores de CA 50/60 Hz sobre modelo uniforme **justificado**, con corrientes/fallas documentadas, geometría y varillas dentro del dominio de los procedimientos seleccionados. **No es aprobación del motor, cierre de la etapa 0 ni conformidad de una instalación real**.
+
+**Evidencia verificable publicada en `main`:**
+- [Matriz final y evaluación de los ocho criterios](./docs/estudios/ETAPA1_MATRIZ_Y_CRITERIOS_DE_CIERRE.md): 22 familias E01–E22 con referencia exacta, entradas, salidas, hipótesis, exclusiones y prueba pendiente del futuro motor.
+- [Acta de 44 comprobaciones documentales](./docs/estudios/ACTA_PRUEBAS_ETAPA1_2026-11-17.md): distingue cotejo editorial, pruebas de límites, KCL/KVL, sensibilidad y ausencia de validación integral.
+- [Script reproducible de estudio](./docs/estudios/verificaciones_etapa1_20261117.py), ejecutado localmente (44/44 comprobaciones internas). **Solo investigación; no es el motor del producto.**
+- [Diagnóstico de B.1/H.3 y Cor 1-2015](./docs/estudios/DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md): discrepancias matemáticamente explicadas, sin atribuir una fe de erratas oficial.
+- [Fuentes normativas y correspondencias chilenas](./docs/estudios/ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md).
+
+**Condiciones de cierre y exclusiones:** las ecuaciones candidatas están referidas y restringidas; el uso de suelo estratificado, reticulados desiguales, GIS, cercos, tensiones transferidas o retorno de corriente complejo queda **fuera del subalcance v1/no evaluable** hasta una ampliación estudiada y validada. En la etapa 5 cada función requerirá **validación independiente**; reproducir el texto IEEE no equivale a validarla. No modificar tablas editoriales para encubrir incoherencias.
+
+**Secuencia de continuidad obligatoria:** cerrar primero **las cinco tareas abiertas de etapa 0** (seguridad, privacidad, alcance formal, control de cambios y decisiones tecnológicas). Solo después avanzar a etapa 2. El optimizador físico permanece etapa 10.
 
 ## Etapa 2 — Modelo de datos, flujo y prototipo mínimo
 
