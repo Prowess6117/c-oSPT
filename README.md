@@ -9,7 +9,7 @@
 
 Desarrollar una aplicación **web instalable (PWA), local-first y, en lo posible, funcional sin conexión**, para ingresar antecedentes, dimensionar y verificar mallas de puesta a tierra, comparar alternativas y generar **informes técnicos trazables**.
 
-El fundamento técnico principal será **IEEE Std 80-2013, según ejemplar recibido que incorpora Cor 1-2015**. La identificación del ejemplar está confirmada; el estudio exhaustivo de sus métodos, sus eventuales erratas posteriores y la vigencia para proyectos reales continúan abiertos. Se revisará su campo de aplicación y su relación con la normativa chilena pertinente a cada caso. **No se asumirá que IEEE 80 es aplicable indiscriminadamente a cualquier instalación eléctrica.**
+El fundamento técnico principal será **IEEE Std 80-2013, según ejemplar recibido que incorpora Cor 1-2015**. La **etapa 1 se cerró únicamente como estudio documental acotado** de procedimientos aplicables a mallas regulares de subestaciones de CA en suelo uniforme justificado. La selección formal del ámbito de la primera versión, la revisión de exigencias de cada proyecto y la **validación del futuro motor** siguen pendientes. No se presenta el estudio documental como validación computacional ni certificación. Se revisará su campo de aplicación y su relación con la normativa chilena pertinente a cada caso. **No se asumirá que IEEE 80 es aplicable indiscriminadamente a cualquier instalación eléctrica.**
 
 El objetivo es construir una **herramienta de cálculo auditable**, no una caja negra que entregue una respuesta sin justificarla. El desarrollo prioriza, en este orden:
 
@@ -135,7 +135,7 @@ Entregables finales previstos:
 
 ## 9. Decisiones pendientes
 
-1. **Edición del ejemplar IEEE Std 80**: identificada como **IEEE Std 80-2013 con Cor 1-2015** (PDF publicado en mayo de 2015). **Pendientes:** estudio exhaustivo, correcciones/vigencia posteriores si las hubiera y validación independiente; no se ha implementado un motor.
+1. **Edición IEEE Std 80 para el estudio:** identificada como **IEEE Std 80-2013 con Cor 1-2015**. El estudio **documental acotado de etapa 1 está cerrado**; comprobar vigencia aplicable al proyecto real y validar de manera independiente los procedimientos en el motor antes de usarlos.
 2. **Primer tipo de instalación objetivo**: se definirá conforme al alcance real del documento y la normativa chilena aplicable; no se extrapolará a BT/MT/AT automáticamente.
 3. **Datos técnicos mínimos, unidades y casos de prueba de referencia**: a definir durante la lectura y modelación.
 4. **Repositorio público y publicación web**: GitHub será la fuente del código; habilitar un sitio público será una decisión separada, condicionada a revisión de seguridad.
@@ -147,6 +147,9 @@ El material de investigación se conserva en `docs/estudios/`:
 - [Estudio normativo inicial IEEE80/81 y RIC/RPTD](./docs/estudios/ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md)
 - [Conocimiento consolidado de la etapa 1](./docs/estudios/CONOCIMIENTO_CONSOLIDADO_ETAPA1.md)
 - [Comprobaciones adicionales, discrepancias y límites](./docs/estudios/VERIFICACIONES_ADICIONALES_ETAPA1_2026-11-17.md)
+- [Cierre documental de etapa 1: matriz y métodos delimitados](./docs/estudios/ETAPA1_MATRIZ_Y_CRITERIOS_DE_CIERRE.md)
+- [Acta de 44 comprobaciones documentales](./docs/estudios/ACTA_PRUEBAS_ETAPA1_2026-11-17.md)
+- [Script independiente de estudio de la etapa 1](./docs/estudios/verificaciones_etapa1_20261117.py)
 - [Diagnóstico de inconsistencias B.1 y H.3: causas matemáticas y valores de referencia](./docs/estudios/DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md)
 - [Script autocontenido para reproducir el diagnóstico B.1/H.3](./docs/estudios/diagnostico_inconsistencias_ieee80.py)
 - [Script autónomo de comprobaciones exploratorias](./docs/estudios/pruebas_exploratorias_2026_11_17.py)
