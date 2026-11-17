@@ -1,3 +1,5 @@
+# NOTA POSTERIOR: las diferencias B.1/H.3 fueron resueltas matemáticamente.
+# Ver diagnostico_inconsistencias_ieee80.py y DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md
 # c-oSPT — PRUEBAS DOCUMENTALES, NO MOTOR, NO USO EN DISEÑO REAL
 # IEEE Std 80-2013/Cor1-2015 §§11.3,14.2-14.3,15.9-15.10, anexos B/H;
 # IEEE Std 81-2012 §7.2.3.
@@ -47,7 +49,7 @@ def main():
     am=conductor_mm2(6.814,.5,3.85,.00378,5.862,245,700,40)
     print("  acero cobre 30%: %.6f kcmil / %.6f mm2; impreso: 59.81 kcmil" %(ac,am))
     assert abs(am-ac*.5067074791)<.02
-    assert porcentaje(ac,59.81)>10 # discrepancia deliberadamente NO resuelta
+    assert porcentaje(ac,59.81)>10 # El valor editorial 59.81 corresponde a I=6.184 kA, no 6.814 kA
     cu=6.814*7.06*sqrt(.5)
     assert abs(cu-34.02)<.01
     kf=conductor_kcmil(1,1,3.85,.00378,5.86,245,1084,40)
@@ -98,7 +100,7 @@ def main():
     em=rho*ig*km(n,D,h,d)*ki/L
     es=rho*ig*ks(n,D,h)*ki/(.75*L)
     print("  Rg %.6f vs 1.05, GPR %.6f vs 780" %(rg,gpr))
-    print("  Em %.6f vs 232, Es %.6f vs 96: DISCREPANCIA ABIERTA" %(em,es))
+    print("  Em %.6f vs 232, Es %.6f vs 96: CIFRAS TABULADAS IMPLICAN 780 A, no 744.8 A" %(em,es))
 
 if __name__ == "__main__":
     main()
