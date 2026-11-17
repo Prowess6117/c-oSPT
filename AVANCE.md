@@ -90,10 +90,23 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 - **Pendientes:** cerrar etapa 0 (alcance/seguridad), examinar sistemáticamente correcciones y métodos, validar térmica/Schwarz/D_f/S_f/modelos estratificados/anexo H, obtener documentos chilenos complementarios y estudiar registros de mediciones; no desarrollar motor aún.
 - **Estado:** etapa 0 en curso; etapa 1 iniciada, **NO cerrada**; etapa 10 optimizador continúa como última etapa.
 
+## 7 ter. Comprobaciones adicionales y conocimiento conservado — 2026-11-17
+
+**Documentos publicados y verificados en `main`:**
+- [Conocimiento consolidado etapa 1](./docs/estudios/CONOCIMIENTO_CONSOLIDADO_ETAPA1.md): fuente, alcance, variables, hipótesis, restricciones, criterio de continuidad y pendientes, sin copiar los PDF.
+- [Verificaciones adicionales IEEE80/81](./docs/estudios/VERIFICACIONES_ADICIONALES_ETAPA1_2026-11-17.md): descripción de entradas/unidades, referencias exactas, resultados, comparaciones y discrepancias.
+- [Pruebas autónomas en Python](./docs/estudios/pruebas_exploratorias_2026_11_17.py): script documental sin dependencias ni integración en la app. No es el motor del proyecto.
+
+**Pruebas aritméticas documentadas:** térmica de cobre y `K_f` en material compuesto; cinco valores de `D_f` y efecto de 50/60 Hz; caso simplificado `S_f` de IEEE80 §15.9; Schwarz homogéneo con verificación de matriz y proporcionalidad; Wenner de IEEE81 con control `b/a` y valores seleccionados del benchmark H.1; resistencia/GPR del benchmark H.3.1. Los resultados coherentes corresponden solo a los ejemplos y condiciones especificados, **no validan un motor**.
+
+**Discrepancias abiertas:** B.1 acero recubierto de cobre 30 %: `59,81` vs `≈65,905 kcmil`; H.3.1 tensión de malla/paso: `232/96 V` impresos frente a `≈221,17/91,68 V` reconstruidos. No atribuir causa ni alterar cifras sin evidencia.
+
+**Bloqueos:** seguridad y primer alcance de etapa 0; validación integral de IEEE80 §§11/13–17 y anexos H/C; interpretación estratificada y estudio geoléctrico independiente; ejemplos de redes complejas `S_f`; referencia oficial y documentos complementarios chilenos. **Etapa 0 ABIERTA, etapa 1 EN CURSO, etapa 10 última, motor NO iniciado.**
+
 ## 8. Próximos pasos (máximo cinco)
 
 1. Completar las tareas pendientes de **etapa 0** (alcance inicial, reglas de seguridad y repositorio), sin inventar criterios normativos.
-2. Obtener el PDF de **IEEE Std 80**, identificar la edición y comenzar **etapa 1: lectura técnica y matriz normativa**.
+2. Continuar las **comprobaciones de etapa 1** sobre IEEE80-2013/Cor1-2015 e IEEE81-2012; resolver discrepancias térmica y benchmark H.3.
 3. Delimitar el primer tipo de instalación y las verificaciones chilenas realmente aplicables.
 4. Registrar cada decisión metodológica con fuente, condiciones, estado y prueba pendiente.
 5. Actualizar esta bitácora y ROADMAP al concluir la próxima sesión técnica importante.
@@ -126,7 +139,7 @@ Siguiente acción concreta:
 
 ## 10. Ficha corta para abrir un nuevo chat
 
-> Trabajaremos en el proyecto **c-oSPT**, repositorio público: https://github.com/Prowess6117/c-oSPT. Lee primero **README.md**, **ROADMAP.md** y **AVANCE.md** en la rama `main`. Se desarrolla una PWA personal, local-first, para calcular y verificar mallas de puesta a tierra mediante procedimientos verificables de **IEEE Std 80** y normativa chilena aplicable, con informe técnico auditable. Los datos de proyectos reales no se publican. Resistividad: inicialmente IP2Win/alternativa y contraste Excel. **Etapa 0 en curso**; **etapa 1 aún no iniciada** al 2026-11-17. IEEE 80 se compartirá en el chat de lectura; no inventar edición ni fórmulas. El **optimizador de dimensiones y reticulado** es la última etapa. No marcar tareas como concluidas sin evidencia. Registrar cambios y actualizar AVANCE/ROADMAP al cerrar cada sesión importante.
+> Trabajaremos en el proyecto **c-oSPT**, repositorio público: https://github.com/Prowess6117/c-oSPT. Lee primero **README.md**, **ROADMAP.md** y **AVANCE.md** en la rama `main`. Se desarrolla una PWA personal, local-first, para calcular y verificar mallas de puesta a tierra mediante procedimientos verificables de **IEEE Std 80** y normativa chilena aplicable, con informe técnico auditable. Los datos de proyectos reales no se publican. Resistividad: inicialmente IP2Win/alternativa y contraste Excel. **Etapa 0 en curso**; **etapa 1 iniciada y NO cerrada** al 2026-11-17. PDFs de IEEE80-2013/Cor1-2015, IEEE81-2012, RIC06 y RPTD06 recibidos sin publicar; revisar estudios en `docs/estudios/` y no inventar métodos ni declarar validación del motor. El **optimizador de dimensiones y reticulado** es la última etapa. No marcar tareas como concluidas sin evidencia. Registrar cambios y actualizar AVANCE/ROADMAP al cerrar cada sesión importante.
 
 ---
 
