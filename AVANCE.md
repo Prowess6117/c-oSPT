@@ -4,7 +4,7 @@
 > **Nombre funcional provisional:** MallaTierra  
 > **Última actualización:** 2026-11-17  
 > **Etapa activa:** 0 — Definición, repositorio y seguridad de base (**EN CURSO; no cerrada**)  
-> **Inicio del estudio detallado de IEEE Std 80:** INICIADO (documentación exploratoria y contrastes parciales; no cerrado)  
+> **Etapa 1 — estudio normativo:** CERRADA DOCUMENTALMENTE (solo subalcance de método definido; no motor ni validación integral)  
 > **Cálculos del motor implementados y validados:** NINGUNO; únicamente pruebas matemáticas exploratorias externas al motor  
 > **Naturaleza del documento:** síntesis de continuidad; no es una transcripción completa del chat.
 
@@ -113,10 +113,32 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 - **Conclusión:** B.1 y H.3 **RESUELTAS MATEMÁTICAMENTE** sin cambiar fórmulas; hallazgo de probable inconsistencia editorial en valores impresos. No hay errata oficial acreditada ni validación del futuro motor.
 - **Estado global:** etapa 0 ABIERTA, etapa 1 EN CURSO por otros procedimientos y controles; sin funciones de ingeniería en producción.
 
+## 7 quinquies. Cierre verificable del estudio documental de etapa 1 — 2026-11-17
+
+**Dictamen:** etapa 1 **CERRADA solo como estudio/documentación del subalcance inicial** de subestaciones exteriores de CA, suelo uniforme respaldado por antecedentes y geometrías regulares con método aplicable. No autoriza el uso de resultados para ingeniería real ni acredita la precisión de un motor inexistente. **Etapa 0 sigue ABIERTA (5/8 pendientes) y no se salta.**
+
+**Evidencia incorporada a `main` y leída de vuelta tras cada publicación:**
+- [Matriz integral y condiciones de cierre](./docs/estudios/ETAPA1_MATRIZ_Y_CRITERIOS_DE_CIERRE.md), 22 familias de métodos E01–E22, referencias, variables, unidades, modelos, dominios, bloqueos y pruebas futuras.
+- [Acta de 44 comprobaciones matemáticas](./docs/estudios/ACTA_PRUEBAS_ETAPA1_2026-11-17.md) con comparaciones B.1–B.4, Df, Cs, tensiones tolerables, Sf/KCL, Schwarz/KVL, Wenner/sondas, modelo teórico ideal de dos capas y H.5/H.6.
+- [Script de pruebas de investigación](./docs/estudios/verificaciones_etapa1_20261117.py), ejecutado localmente: **44/44 comprobaciones**, biblioteca estándar, sin acceso a red, PDF ni datos de proyectos.
+- [Diagnóstico de divergencias y Cor 1](./docs/estudios/DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md): dos inconsistencias de referencias aclaradas aritméticamente, sin ratificación de fe de erratas IEEE.
+- Cuatro PDF normativos empleados **solo como fuentes privadas de lectura**; no se han subido.
+
+**Decisiones técnicas/documentales:**
+1. Solo un método de suelo **uniforme y reticulado regular**, en instalaciones de CA aplicables, será candidato inicial; **no** implementar por simple sustitución para suelos de dos/múltiples capas, geometrías irregulares o GIS.
+2. Riesgos de cercos, tensiones transferidas, objetos externos y retornos complejos se señalan como **no evaluables/fuera de alcance** para el primer método; si son obligatorios en una instalación, no declarar cumplimiento global.
+3. La interpretación de resistividad externa (IP2Win u otra), las pruebas de módulos, su validación independiente y las mediciones de campo pertenecen a etapas posteriores. Las comprobaciones matemáticas actuales **no** validan un motor.
+4. No trasladar automáticamente requisitos de RIC a RPTD; se detectó remisión potencialmente incongruente en el literal de RPTD §8.25 hacia §8.21, sin «corregirla» por cuenta propia.
+5. Se verificó en IEEE-SA el estado **Inactive-Reserved** de IEEE80-2013 desde 2024-03-21; esto no implica por sí solo derogación de la remisión chilena específica. Comprobar vigencia y requisitos del proyecto real al aplicarlos.
+
+**Criterios del ROADMAP:** los **8 ítems de estudio** se dejaron [x], respaldados por referencias; las excepciones quedaron **declaradas y bloqueadas**. La etapa 0 conserva sus 5 casillas [ ] y requiere cierre antes de ejecutar etapa 2.
+
+**Próxima acción única:** resolver las cinco tareas pendientes de etapa 0 (alcance productivo formal, `.gitignore`/licencia/secretos, datos reales, procedimiento de revisiones y decisiones tecnológicas), luego etapa 2. **Optimizador físico: etapa 10**.
+
 ## 8. Próximos pasos (máximo cinco)
 
 1. Completar las tareas pendientes de **etapa 0** (alcance inicial, reglas de seguridad y repositorio), sin inventar criterios normativos.
-2. Continuar las **comprobaciones de etapa 1** IEEE80/81, utilizando el diagnóstico matemático de B.1/H.3 ya resuelto y abordando métodos/casos de validación aún faltantes.
+2. Respetar el **cierre documental acotado de etapa 1** y sus bloqueos; no ampliar métodos antes de fundamentarlos y validarlos.
 3. Delimitar el primer tipo de instalación y las verificaciones chilenas realmente aplicables.
 4. Registrar cada decisión metodológica con fuente, condiciones, estado y prueba pendiente.
 5. Actualizar esta bitácora y ROADMAP al concluir la próxima sesión técnica importante.
@@ -149,7 +171,7 @@ Siguiente acción concreta:
 
 ## 10. Ficha corta para abrir un nuevo chat
 
-> Trabajaremos en el proyecto **c-oSPT**, repositorio público: https://github.com/Prowess6117/c-oSPT. Lee primero **README.md**, **ROADMAP.md** y **AVANCE.md** en la rama `main`. Se desarrolla una PWA personal, local-first, para calcular y verificar mallas de puesta a tierra mediante procedimientos verificables de **IEEE Std 80** y normativa chilena aplicable, con informe técnico auditable. Los datos de proyectos reales no se publican. Resistividad: inicialmente IP2Win/alternativa y contraste Excel. **Etapa 0 en curso**; **etapa 1 iniciada y NO cerrada** al 2026-11-17. PDFs de IEEE80-2013/Cor1-2015, IEEE81-2012, RIC06 y RPTD06 recibidos sin publicar; revisar estudios en `docs/estudios/` y no inventar métodos ni declarar validación del motor. El **optimizador de dimensiones y reticulado** es la última etapa. No marcar tareas como concluidas sin evidencia. Registrar cambios y actualizar AVANCE/ROADMAP al cerrar cada sesión importante.
+> Trabajaremos en el proyecto **c-oSPT**, repositorio público: https://github.com/Prowess6117/c-oSPT. Lee primero **README.md**, **ROADMAP.md** y **AVANCE.md** en la rama `main`. Se desarrolla una PWA personal, local-first, para calcular y verificar mallas de puesta a tierra mediante procedimientos verificables de **IEEE Std 80** y normativa chilena aplicable, con informe técnico auditable. Los datos de proyectos reales no se publican. Resistividad: inicialmente IP2Win/alternativa y contraste Excel. **Etapa 0 en curso**; **etapa 1 cerrada documentalmente solo para el subalcance de suelo uniforme y mallas regulares** al 2026-11-17. PDFs de IEEE80-2013/Cor1-2015, IEEE81-2012, RIC06 y RPTD06 recibidos sin publicar; usar matriz/acta en `docs/estudios/`, mantener etapa 0 abierta y no declarar validación del motor. El **optimizador de dimensiones y reticulado** es la última etapa. No marcar tareas como concluidas sin evidencia. Registrar cambios y actualizar AVANCE/ROADMAP al cerrar cada sesión importante.
 
 ---
 
