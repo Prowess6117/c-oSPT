@@ -20,6 +20,10 @@ Si se filtra una credencial: revocarla o rotarla en origen, suspender uso/public
 - Para importaciones: validar tipo, tamaño, estructura y tratamiento seguro del contenido.
 - Los escáneres y .gitignore son auxiliares; no dan garantía absoluta.
 
+## Controles administrativos pendientes — excepciones de etapa 0
+
+El propietario decidió **posponer** estas configuraciones y cerrar **documentalmente** la etapa 0, sin dar por mitigados los riesgos. Se documentan en [BACKUP_DOCUMENTAL.md](./BACKUP_DOCUMENTAL.md). **No equivale a seguridad verificada.**
+
 ## Pendientes que requieren configuración real
 - Protección de la rama main.
 - Privacidad del correo de commits y bloqueo de pushes que divulguen correo privado.

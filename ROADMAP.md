@@ -1,13 +1,13 @@
 # ROADMAP — MallaTierra
 
-> **Versión:** 0.4 — licencia beta restrictiva y decisión sobre claves; etapa 0 pendiente de ajustes GitHub.  
-> **Documento rector:** [README.md](./README.md). Bitácora de continuidad: [AVANCE.md](./AVANCE.md).  
-> **Estado global:** etapa 0 ABIERTA; etapa 1 CERRADA solo como estudio documental acotado; etapas 2–10 SIN INICIAR. Sin motor implementado ni validado.  
+> **Versión:** 0.5 — cierre documental condicionado de etapa 0, con respaldo inmutable y riesgos aceptados.  
+> **Documento rector:** [README.md](./README.md). Bitácora: [AVANCE.md](./AVANCE.md). Respaldo: [BACKUP_DOCUMENTAL.md](./BACKUP_DOCUMENTAL.md).  
+> **Estado global:** etapa 0 **CERRADA DOCUMENTALMENTE CON EXCEPCIONES DE SEGURIDAD**; etapa 1 CERRADA como estudio documental acotado; etapas 2–10 SIN INICIAR. Sin motor implementado ni validado.  
 > **Orden:** las etapas se cierran con evidencia, no solo con código. **La etapa 10, optimizador del diseño físico, es la última.**
 
 ## Cómo usar este roadmap
 
-- Marcar `[x]` únicamente cuando exista el entregable y se hayan satisfecho sus criterios de aceptación; `[ ]` significa pendiente.
+- Marcar `[x]` únicamente cuando exista el entregable y se hayan satisfecho sus criterios de aceptación; `[ ]` significa pendiente. **Excepción registrada:** una tarea documental de la etapa 0 se cerró por decisión expresa del propietario con riesgos de controles administrativos **no mitigados**; véase BACKUP_DOCUMENTAL. No usar ese precedente para cerrar cálculos ni controles eléctricos sin verificación.
 - Al iniciar una sesión, revisar: **etapa activa**, **decisiones confirmadas**, **bloqueos**, **próxima tarea concreta** y **pruebas afectadas**.
 - Cuando una norma, dato o hipótesis esté sin comprobar, escribir **PENDIENTE / NO CONFIRMADO**; no convertirlo en un valor predeterminado.
 - Cada ecuación implementada necesitará referencia verificable a la edición normativa, explicación de variables y unidades, hipótesis, dominio de aplicación, test independiente y correspondencia con el informe.
@@ -18,12 +18,12 @@
 
 | Campo | Valor inicial |
 |---|---|
-| Etapa activa | 0 — Definición y preparación |
-| Última revisión | 2026-11-17 — auditoría y políticas operativas de etapa 0 |
+| Etapa activa | Ninguna en ejecución; **próxima etapa 2 (NO INICIADA)** |
+| Última revisión | 2026-11-17 — cierre documental condicionado de etapa 0 |
 | Entregables iniciales | `README.md`, `ROADMAP.md` y `AVANCE.md` en GitHub público (documentación de planificación) |
-| Bloqueo principal | Etapa 0: ajustes operativos de GitHub (correo de autor, protección de rama, revisión de secretos/historial). La licencia beta restrictiva ya está definida; motor inexistente. |
-| Otra decisión pendiente | Licencia definida: reservada con uso personal/educativo autorizado y comercial solo con permiso escrito; aún sin claves implementadas. Verificar privacidad de cuenta. |
-| Próximo paso | Verificar documentación de licencia, configurar protección de main y privacidad de correo, comprobar seguridad/historial; cerrar etapa 0 solo con evidencia. |
+| Bloqueo principal | Ningún bloqueo para **continuar la planificación a etapa 2**. Persisten excepciones SEC-00-01/04 de seguridad que deben vigilarse y atenderse antes de distribuir una aplicación. Motor inexistente. |
+| Otra decisión pendiente | Licencia beta restrictiva definida; claves no implementadas. Privacidad del correo y protección de main aplazadas por decisión del propietario, sin mitigación técnica. |
+| Próximo paso | Etapa 2: especificar modelo de datos/entradas y validaciones del motor; no confundir cierre documental con seguridad verificada. Controlar riesgos del BACKUP_DOCUMENTAL. |
 
 ## Etapa 0 — Definición, repositorio y seguridad de base
 
@@ -33,7 +33,7 @@
 - [x] Ordenar el desarrollo en etapas verificables en `ROADMAP.md`.
 - [x] Confirmar el primer campo de aplicación (tipo de instalación) y sus límites, conforme a [alcance inicial acotado](./docs/ETAPA0_ALCANCE_INICIAL.md); no equivale a verificar instalaciones reales.
 - [x] Crear el repositorio **público** con un nombre definitivo o provisional y estructura mínima ([Prowess6117/c-oSPT](https://github.com/Prowess6117/c-oSPT), rama `main`).
-- [ ] Preparar `.gitignore`, licencia adecuada para código propio, política básica de contribución y revisión de secretos: **parcial**; `.gitignore`, [SECURITY](./SECURITY.md), [CONTRIBUTING](./CONTRIBUTING.md) y [auditoría preliminar](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md) documentados. **LICENCIA BETA DEFINIDA** en [LICENSE.md](./LICENSE.md) y [política de claves](./docs/LICENCIAS_Y_ACTIVACION.md); **pendientes** ajustes de privacidad/protección en GitHub y comprobación suficiente de historial/secretos.
+- [x] Preparar `.gitignore`, licencia adecuada para código propio, política básica de contribución y revisión de secretos: `.gitignore`, [SECURITY](./SECURITY.md), [CONTRIBUTING](./CONTRIBUTING.md), [LICENSE](./LICENSE.md), [política de claves](./docs/LICENCIAS_Y_ACTIVACION.md) y [auditoría preliminar](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md) publicados. **Cierre documental por aceptación explícita de excepciones SEC-00-01/04:** `main` sigue desprotegida; correo de autor histórico expuesto; sin auditoría completa de secretos. No afirmar mitigación.
 - [x] Determinar tratamiento de datos reales: ubicación, mediciones, nombres de clientes, informes y archivos exportados ([política de datos](./docs/POLITICA_DATOS.md)); implementación de controles técnicos corresponde a etapas posteriores.
 - [x] Documentar un procedimiento para cambios (`branch`/PR o equivalente), pruebas y revisiones de seguridad antes de publicar ([CONTRIBUTING.md](./CONTRIBUTING.md)); protección efectiva de `main` aún pendiente.
 - [x] Registrar decisiones tecnológicas solo después de compararlas con alternativas simples ([ADR-0001](./docs/ADR-0001_ARQUITECTURA_INICIAL.md)); versiones de herramientas y dependencias se evaluarán en etapa 2.
@@ -41,7 +41,7 @@
 **Entregable:** repositorio limpio y documentación de alcance/seguridad.  
 **Criterio de cierre:** no hay información privada ni normas protegidas en el repositorio; se conocen el público objetivo, el campo de aplicación inicial y las reglas de trabajo.
 
-**Estado 2026-11-17:** **7/8 tareas registradas como completas; etapa 0 ABIERTA.** La licencia beta ya quedó definida; la última casilla permanece abierta por ajustes de GitHub y comprobaciones de seguridad aún sin evidencia suficiente. Se documentaron exclusiones, política de datos, proceso de cambios y arquitectura. La revisión por patrones del árbol vigente es limitada y no acredita ausencia de secretos en todo el historial. Véase [auditoría](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md).
+**Estado 2026-11-17:** **etapa 0 CERRADA DOCUMENTALMENTE, 8/8 tareas registradas con evidencia o excepción expresa**. El propietario decidió omitir por ahora la configuración administrativa de GitHub. **El criterio de seguridad original NO está íntegramente demostrado:** rama sin protección, correo privado visible en metadatos históricos y revisión no forense. Esta es una **aceptación de riesgos**, no una prueba de que el repositorio esté completamente saneado. Véase [BACKUP_DOCUMENTAL.md](./BACKUP_DOCUMENTAL.md), sección E, y [auditoría](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md). **No habilita uso profesional ni despliegue automático.**
 
 ## Etapa 1 — Lectura técnica y matriz normativa IEEE Std 80
 
@@ -266,8 +266,8 @@ Se publicó y cotejó en `main` el [conocimiento consolidado](./docs/estudios/CO
 
 | ID | Decisión | Estado | Cómo resolverla |
 |---|---|---|---|
-| D-01 | Edición/correcciones de IEEE Std 80 | **PENDIENTE** | Revisar PDF que aportará el usuario |
-| D-02 | Primer tipo de instalación objetivo | **PENDIENTE** | Delimitar tras identificar alcance de la norma y contexto chileno |
+| D-01 | Edición/correcciones de IEEE Std 80 | **IDENTIFICADA PARA ESTUDIO** | IEEE Std 80-2013/Cor1-2015; vigencia del caso específico y erratas adicionales deben verificarse |
+| D-02 | Primer tipo de instalación objetivo | **DEFINIDO PARA V0.1** | [Alcance restringido](./docs/ETAPA0_ALCANCE_INICIAL.md); sin conclusión general de seguridad |
 | D-03 | Procedimiento y entradas de resistividad | **PENDIENTE** | Definir desde IP2Win/Excel y estudio técnico |
 | D-04 | Lenguaje/framework/UI | **PENDIENTE** | Comparar soluciones simples, offline y seguras |
 | D-05 | Persistencia de casos y cifrado | **PENDIENTE** | Evaluar modelo de amenazas y flujo de archivos |
@@ -275,7 +275,7 @@ Se publicó y cotejó en `main` el [conocimiento consolidado](./docs/estudios/CO
 | D-07 | Alcance de optimización geométrica | **PENDIENTE** | Depende del motor y dominio de fórmulas ya validados |
 | D-08 | Licencia beta y modalidades | **DEFINIDA — DOCUMENTAL** | [LICENSE.md](./LICENSE.md): derechos reservados, personal/educativa autorizada, comercial solo con permiso escrito |
 | D-09 | Activación por claves de ambas modalidades | **PENDIENTE DE IMPLEMENTACIÓN** | [Política técnica](./docs/LICENCIAS_Y_ACTIVACION.md); sin motor, claves ni controles operativos |
-| D-10 | Protección GitHub main y correo del autor | **PENDIENTE DE AJUSTES** | Requiere permisos de administración no expuestos por conexión actual |
+| D-10 | Protección GitHub main y correo del autor | **EXCEPCIÓN ACEPTADA PROVISIONALMENTE** | No configurados, no verificados; riesgos SEC-00-01/02/03 en [respaldo](./BACKUP_DOCUMENTAL.md), revisarlos antes de distribución |
 
 ## Plantilla para cada sesión de avance
 

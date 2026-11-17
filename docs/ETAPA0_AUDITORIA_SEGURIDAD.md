@@ -32,3 +32,9 @@ Documentación oficial útil:
 - https://docs.github.com/en/account-and-profile/how-tos/email-preferences/blocking-command-line-pushes-that-expose-your-personal-email-address
 - https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule
 - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
+
+## Verificación y aceptación posterior — 2026-11-17
+
+Se revisaron **21 archivos rastreados** del árbol vigente, la integridad de sus enlaces Markdown y los **nombres de rutas modificadas en 32 commits** accesibles; no se detectaron PDF normativos o archivos privados obvios ni coincidencias de formatos habituales de secretos en el contenido actual. El alcance **no** fue escaneo forense de todo el contenido histórico. Se reconfirmó `main` sin protección y metadatos de autor que incluyen una dirección potencialmente personal, no reproducida aquí.
+
+**El propietario pidió omitir las configuraciones de rama por ahora y cerrar documentalmente etapa 0.** La excepción se documentó como SEC-00-01/04 en [BACKUP_DOCUMENTAL](../BACKUP_DOCUMENTAL.md). No afirmar que esos controles fueron activados; el criterio original de ausencia demostrada de información personal en todo el historial no puede considerarse íntegramente satisfecho. La siguiente etapa puede planificarse, pero la distribución/uso profesional seguirá condicionada por evaluación de seguridad y validación del motor.

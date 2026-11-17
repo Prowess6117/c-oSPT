@@ -22,4 +22,4 @@ Proyecto de uso personal con código público. No incorporar contribuciones exte
 
 Los scripts existentes en docs/estudios son **exploratorios**, no pruebas de un motor inexistente. No imponer checks automáticos que todavía no se han implementado.
 
-**Limitación:** este documento no activa protección de main. La configuración debe efectuarse en los ajustes de GitHub.
+**Limitación y excepción vigente:** el procedimiento de rama/PR es una disciplina de trabajo **manual, no impuesta** por una protección de `main`. El propietario aplazó la configuración y quedó registrada en [BACKUP_DOCUMENTAL.md](./BACKUP_DOCUMENTAL.md); esto no valida seguridad ni autoriza desplegar un producto no probado.

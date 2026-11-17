@@ -1,8 +1,8 @@
 # MallaTierra — Diseño y verificación de mallas de puesta a tierra
 
-> **Estado:** definición inicial del proyecto (sin motor de cálculo implementado ni validado).  
+> **Estado:** etapa 0 cerrada **documentalmente con excepciones de seguridad registradas**; etapa 1 cerrada como estudio documental acotado; motor todavía sin implementar ni validar.  
 > **Uso previsto:** herramienta personal de apoyo a la ingeniería eléctrica en Chile.  
-> **Documentos complementarios:** [ROADMAP.md](./ROADMAP.md) (plan de etapas) y [AVANCE.md](./AVANCE.md) (bitácora de continuidad).  
+> **Documentos complementarios:** [ROADMAP.md](./ROADMAP.md) (plan), [AVANCE.md](./AVANCE.md) (continuidad) y [BACKUP_DOCUMENTAL.md](./BACKUP_DOCUMENTAL.md) (punto de recuperación de etapa 0).  
 > **Nombre «MallaTierra»:** provisional; podrá cambiarse sin alterar el alcance.
 
 ## 1. Propósito
@@ -170,7 +170,7 @@ El material de investigación se conserva en `docs/estudios/`:
 - [ADR-0001 — Arquitectura y alternativas](./docs/ADR-0001_ARQUITECTURA_INICIAL.md): justificación de PWA local-first sin backend, elección detallada de stack diferida a etapa 2.
 - [Seguridad](./SECURITY.md), [procedimiento de cambios](./CONTRIBUTING.md) y [auditoría inicial](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md).
 
-**Estado de etapa 0:** siete de ocho tareas verificadas; la licencia restrictiva beta está documentada, pero faltan configuraciones efectivas de GitHub y la revisión final de seguridad/historial. La visibilidad pública **no concede una licencia abierta**. No existe todavía un mecanismo de activación ni una aplicación apta para ingeniería real.
+**Estado de etapa 0:** **cerrada para planificación/documentación con excepciones de seguridad aceptadas por el propietario**; 8/8 tareas documentales verificadas o resueltas por excepción explícita. **NO** significa seguridad informática certificada: `main` no está protegida, existen metadatos históricos con correo personal y no hay auditoría forense del historial. Véanse [BACKUP_DOCUMENTAL.md](./BACKUP_DOCUMENTAL.md) y [auditoría](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md). La licencia beta restrictiva está publicada, pero no existe activación ni motor utilizable.
 
 ## 12. Licencia restrictiva beta y claves futuras
 
