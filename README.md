@@ -2,7 +2,7 @@
 
 > **Estado:** definición inicial del proyecto (sin motor de cálculo implementado ni validado).  
 > **Uso previsto:** herramienta personal de apoyo a la ingeniería eléctrica en Chile.  
-> **Documento complementario:** [ROADMAP.md](./ROADMAP.md).  
+> **Documentos complementarios:** [ROADMAP.md](./ROADMAP.md) (plan de etapas) y [AVANCE.md](./AVANCE.md) (bitácora de continuidad).  
 > **Nombre «MallaTierra»:** provisional; podrá cambiarse sin alterar el alcance.
 
 ## 1. Propósito
