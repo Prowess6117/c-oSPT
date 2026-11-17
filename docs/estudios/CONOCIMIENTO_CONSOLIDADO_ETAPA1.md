@@ -1,5 +1,7 @@
 # c-oSPT — Conocimiento consolidado para continuidad de la etapa 1
 
+**Actualización:** las diferencias B.1/H.3 están **RESUELTAS MATEMÁTICAMENTE**; véase [diagnóstico con inversiones y dos mallas](./DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md). No es una fe de erratas oficial.
+
 **Fecha de corte:** 2026-11-17. **Estado:** registro de interpretación normativa inicial y conocimientos verificados **parcialmente**. No es una norma, no valida el motor de cálculo ni acredita conformidad de una instalación.
 
 **Propósito:** evitar que hallazgos, hipótesis, restricciones, decisiones y pendientes técnicos se pierdan entre sesiones. Es complemento de [ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md](./ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md), no lo reemplaza. El estado del proyecto se rige por [ROADMAP](../../ROADMAP.md) y [AVANCE](../../AVANCE.md).
@@ -50,8 +52,9 @@ Las ediciones son **las recibidas**: la actualización jurídica, nuevas erratas
 
 - **Reproducción exploratoria anterior:** diez contrastes numéricos de `R_g/E_m/E_s` de IEEE80 B.1–B.4 (diferencias relativas 0,038 %–1,200 % frente a tablas editoriales), Wenner algebraico y `C_s` con redondeos. No es validación independiente del motor.
 - **Verificación térmica de cobre:** IEEE80 B.1 para 6,814 kA, `K_f=7,06`, `t_c=0,5 s` produce ≈34,02 kcmil, coherente con la guía.
-- **Hallazgo pendiente prioritario:** caso de conductor cobre-acero 30 % del anexo B.1, ec. (B.3): el valor publicado de 59,81 kcmil **no coincide** con ≈65,90 kcmil al sustituir los parámetros impresos en ec. (46). No atribuir causa sin demostrarla; no usar como caso patrón aprobado.
-- **Pendientes técnicos abiertos:** factor decremental `D_f`, reparto `S_f` para redes complejas, Schwarz completo, suelo de dos/múltiples capas, dominio y sesgo frente a benchmarks anexo H, materiales y límites térmicos, casos especiales, medición/ensayos de campo.
+- **Hallazgo B.1 resuelto matemáticamente:** el valor 59,81 kcmil es la sustitución con **6,184 kA**, frente a **6,814 kA** declarados. La salida correcta de (46) con los datos impresos es **65,905 kcmil ≈ 33,395 mm²**, diámetro sólido ≈6,521 mm. Posible transposición editorial; no ratificada por IEEE.
+- **Hallazgo H.3 resuelto matemáticamente:** H.5 y H.6 imprimen tensiones compatibles con **780 A**, mientras introducción y figuras H.3/H.4 establecen **744,8 A**. Para esta última corriente, Grid 1 da 221,17/91,68 V y Grid 2 155,27/76,25 V en las ecuaciones simplificadas; los valores editoriales quedan registrados pero no se usan como patrones a 744,8 A.
+- **Pendientes técnicos abiertos:** aplicación de `D_f`/`S_f` en dominios completos, Schwarz con modelos y límites de aplicación, suelo de dos/múltiples capas, benchmarking avanzado, materiales/temperaturas, casos especiales y medición/ensayos de campo.
 - **Pendientes de seguridad/alcance etapa 0:** selección formal del primer tipo de instalación; `.gitignore`, licencia, procedimiento de contribución/revisión de secretos, política operativa de datos reales y decisiones tecnológicas.
 
 ## 6. Método de trabajo y reglas de cierre
