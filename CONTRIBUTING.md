@@ -1,6 +1,6 @@
 # Procedimiento de cambios — c-oSPT
 
-Proyecto de uso personal con código público. No incorporar contribuciones externas o licencias ajenas sin revisión de titularidad. La licencia pública del código está pendiente de elección del propietario.
+Proyecto de uso personal con código público. No incorporar contribuciones externas o licencias ajenas sin revisión de titularidad. La [licencia beta restrictiva](./LICENSE.md) reserva los derechos; la modalidad educativa/personal no comercial requiere autorización y futura clave; el uso comercial exige permiso escrito y clave comercial cuando exista.
 
 ## Flujo acordado
 1. Leer README.md, ROADMAP.md y AVANCE.md de main y comprobar etapa/alcance antes de modificar.
