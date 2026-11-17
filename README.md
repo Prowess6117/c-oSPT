@@ -147,6 +147,8 @@ El material de investigación se conserva en `docs/estudios/`:
 - [Estudio normativo inicial IEEE80/81 y RIC/RPTD](./docs/estudios/ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md)
 - [Conocimiento consolidado de la etapa 1](./docs/estudios/CONOCIMIENTO_CONSOLIDADO_ETAPA1.md)
 - [Comprobaciones adicionales, discrepancias y límites](./docs/estudios/VERIFICACIONES_ADICIONALES_ETAPA1_2026-11-17.md)
+- [Diagnóstico de inconsistencias B.1 y H.3: causas matemáticas y valores de referencia](./docs/estudios/DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md)
+- [Script autocontenido para reproducir el diagnóstico B.1/H.3](./docs/estudios/diagnostico_inconsistencias_ieee80.py)
 - [Script autónomo de comprobaciones exploratorias](./docs/estudios/pruebas_exploratorias_2026_11_17.py)
 
 **Es investigación, no un motor validado.** PDFs IEEE/SEC, mediciones privadas y expedientes reales no se incorporan al repositorio. Para el estado efectivo, consultar ROADMAP y AVANCE vigentes.
