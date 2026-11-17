@@ -21,9 +21,9 @@
 | Etapa activa | 0 — Definición y preparación |
 | Última revisión | 2026-11-17 |
 | Entregables iniciales | `README.md`, `ROADMAP.md` y `AVANCE.md` en GitHub público (documentación de planificación) |
-| Bloqueo principal | Falta recibir y verificar edición del PDF IEEE Std 80 |
+| Bloqueo principal | Se identificó IEEE Std 80-2013 con Cor 1-2015; pendientes estudio exhaustivo, validación independiente y delimitación de alcance |
 | Otra decisión pendiente | Delimitar el primer tipo de instalación |
-| Próximo paso | Completar la seguridad y las definiciones pendientes de la etapa 0; posteriormente estudiar IEEE Std 80 |
+| Próximo paso | Completar tareas de seguridad/alcance de etapa 0 y continuar estudio crítico IEEE Std 80 (§§11, 13–17), sin motor |
 
 ## Etapa 0 — Definición, repositorio y seguridad de base
 
@@ -56,6 +56,14 @@
 
 **Entregable:** matriz normativa y esquema trazable del método, con vacíos y asuntos por resolver.  
 **Criterio de cierre:** no quedan fórmulas propuestas sin identificación de su fuente y sus restricciones; cualquier vacío bloqueante está declarado.
+
+### Evidencia parcial de etapa 1 — 2026-11-17
+
+- **Documento publicado:** [Estudio IEEE 80/81 + RIC/RPTD y pruebas exploratorias](./docs/estudios/ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md).
+- **Identificado:** IEEE Std 80-2013, edición publicada en mayo de 2015 con Cor 1-2015; IEEE Std 81-2012; RIC N°06 y RPTD N°06 según copias adjuntas, sin subir los PDF.
+- **Pruebas exploratorias:** diez comparaciones numéricas del anexo B.1–B.4 (R_g, E_m, E_s), consistencia Wenner IEEE 81, efecto de redondeo de C_s y una comprobación de conductor de cobre. **No validan el motor ni certifican cumplimiento**.
+- **Hallazgo crítico abierto:** discrepancia aritmética de la alternativa de conductor cobre-acero del anexo B.1: valor publicado 59,81 kcmil frente a ≈65,90 kcmil al sustituir literalmente las constantes. No usarla como referencia de validación hasta resolverla.
+- **Estado de cierre:** etapa 0 sigue abierta; etapa 1 iniciada pero NO cerrada. Mantener casillas pendientes hasta verificar todos sus criterios.
 
 ## Etapa 2 — Modelo de datos, flujo y prototipo mínimo
 
