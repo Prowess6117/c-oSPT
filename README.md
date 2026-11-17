@@ -136,7 +136,7 @@ Entregables finales previstos:
 ## 9. Decisiones pendientes
 
 1. **Edición IEEE Std 80 para el estudio:** identificada como **IEEE Std 80-2013 con Cor 1-2015**. El estudio **documental acotado de etapa 1 está cerrado**; comprobar vigencia aplicable al proyecto real y validar de manera independiente los procedimientos en el motor antes de usarlos.
-2. **Primer tipo de instalación objetivo**: se definirá conforme al alcance real del documento y la normativa chilena aplicable; no se extrapolará a BT/MT/AT automáticamente.
+2. **Primer tipo de instalación objetivo**: delimitado para la primera implementación a subestaciones exteriores CA 50/60 Hz, mallas regulares y suelo uniforme justificado, solo como diseño y verificación parcial; ver [alcance inicial](./docs/ETAPA0_ALCANCE_INICIAL.md). La clasificación normativa de cada proyecto real sigue siendo indispensable.
 3. **Datos técnicos mínimos, unidades y casos de prueba de referencia**: a definir durante la lectura y modelación.
 4. **Repositorio público y publicación web**: GitHub será la fuente del código; habilitar un sitio público será una decisión separada, condicionada a revisión de seguridad.
 5. **Persistencia/cifrado de proyectos**: se decidirá a partir de la sensibilidad real de los datos y un modelo de amenazas práctico.
@@ -158,10 +158,19 @@ El material de investigación se conserva en `docs/estudios/`:
 
 ## 10. Referencias para la planificación
 
-- [IEEE Standards Association — IEEE Std 80](https://standards.ieee.org/ieee/80/4089/) — referencia institucional; se dispone del ejemplar IEEE80-2013/Cor1-2015 para lectura privada, y el estudio/validación aún no está cerrado.
+- [IEEE Standards Association — IEEE Std 80](https://standards.ieee.org/ieee/80/4089/) — referencia institucional; se dispone de IEEE80-2013/Cor1-2015 para lectura privada. La etapa 1 solo cerró su estudio documental acotado; **el motor de cálculo aún no está implementado ni validado**.
 - [GitHub Docs — What is GitHub Pages?](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages) — publicación estática y tratamiento de IP de visitantes.
 - [MDN — Making PWAs installable](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable) — requisitos de instalación de una PWA.
 - Normativa chilena: documentos RIC, RPTD y disposiciones complementarias que correspondan, **por revisar y citar con precisión** según el alcance definitivo.
+
+## 11. Gobierno operativo y documentación de etapa 0
+
+- [Alcance restringido de la primera implementación](./docs/ETAPA0_ALCANCE_INICIAL.md): mallas regulares para subestaciones exteriores CA y suelo uniforme respaldado; no supone conformidad integral.
+- [Política de datos privados](./docs/POLITICA_DATOS.md): qué puede publicarse, tratamiento local y límites de privacidad.
+- [ADR-0001 — Arquitectura y alternativas](./docs/ADR-0001_ARQUITECTURA_INICIAL.md): justificación de PWA local-first sin backend, elección detallada de stack diferida a etapa 2.
+- [Seguridad](./SECURITY.md), [procedimiento de cambios](./CONTRIBUTING.md) y [auditoría inicial](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md).
+
+**Estado de etapa 0:** siete de ocho tareas documentadas/realizadas; pendiente la tarea compuesta de licencia, controles de GitHub y revisión final de secretos. La visibilidad pública del código **no concede por sí misma una licencia abierta**. Antes del cierre se requieren decisiones y ajustes del propietario. Ninguna funcionalidad de cálculo está aprobada.
 
 ---
 

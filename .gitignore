@@ -1,0 +1,68 @@
+# c-oSPT: filtro preventivo. NO borra commits previos ni sustituye revisión de datos.
+# Claves, configuración y certificados
+.env
+.env.*
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.keystore
+*credentials*
+*secret*
+*token*
+# Proyectos e informes privados
+proyectos/
+proyectos-privados/
+estudios-reales/
+mediciones/
+mediciones-reales/
+informes/
+exportaciones/
+exports/
+backups/
+respaldos/
+private/
+privado/
+data/real/
+data/private/
+*.cospt
+*.sptproj
+*.sqlite
+*.sqlite3
+*.db
+# Documentos potencialmente privados/protegidos; incluir ejemplos sintéticos solo tras revisión
+*.pdf
+*.xls
+*.xlsx
+*.xlsm
+*.csv
+*.ods
+*.doc
+*.docx
+*.zip
+*.7z
+*.rar
+# Build, entornos y temporales
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+.cache/
+*.log
+logs/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.tmp
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+# git add -f puede saltarse estas exclusiones. Revisar siempre git diff --cached.
