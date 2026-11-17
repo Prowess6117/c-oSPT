@@ -1,5 +1,7 @@
 # c-oSPT — Comprobaciones adicionales de etapa 1 (2026-11-17)
 
+**Actualización:** [causa matemática resuelta para B.1 y H.3](./DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md). Las observaciones originales quedan como evidencia histórica; no son discrepancias actualmente inexplicadas.
+
 **Estado:** verificaciones aritméticas y de coherencia **parciales**. No es motor de cálculo, certificación SEC, diseño de proyecto ni validación de métodos fuera de sus hipótesis. Complementa el [conocimiento consolidado](./CONOCIMIENTO_CONSOLIDADO_ETAPA1.md) y el [estudio normativo inicial](./ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md).
 
 **Fuentes primarias:** PDF aportado **IEEE Std 80-2013, incorporando Cor 1-2015**; PDF **IEEE Std 81-2012**. Para disposiciones chilenas, RIC N°06 (res. 33.877/2020) y RPTD N°06 (res. 33.277/2020 modificada por 34.770/2021). **No se publicaron los PDF ni imágenes de sus páginas.**
@@ -19,7 +21,7 @@
 
 **Contrapruebas:** (i) la alternativa de cobre comercial de B.1 usando ec. (47) reproduce **34,016673 kcmil** frente a **34,02 kcmil** impresos; (ii) con las constantes de 30 % cobre-acero pero `t_c=1 s` y `T_m=1084 °C`, la ec. (46) da `K_f≈12,066865`, frente a **12,06** documentados en §11.3.1.2 / tabla 2.
 
-**Conclusión A:** la aplicación algebraica de (45) y (46) es coherente entre sí y con la prueba de `K_f`, pero el caso `T_m=700 °C` de B.1 **continúa DISCREPANTE**. No se ha demostrado si la causa es editorial, un parámetro implícito o un error de interpretación. **Bloqueo:** no usar el 59,81 ni el 65,90 como patrón normativo aprobado hasta obtener una verificación externa.
+**Conclusión A ACTUALIZADA:** 59,81 kcmil es la salida de (46) para 6,184 kA (cifras invertidas); con la corriente declarada 6,814 kA se obtiene **65,905 kcmil**. Discrepancia aritmética resuelta; su confirmación editorial formal por IEEE permanece pendiente. Ver diagnóstico enlazado.
 
 ## B. Factor decremental `D_f` con asimetría
 
@@ -75,25 +77,25 @@ La ec. (3) de IEEE81 requiere que la profundidad de sonda sea suficientemente pe
 
 - Ecuación (57), sin varillas: **`R_g=1,047250 Ω`**, frente a **1,05 Ω** de la tabla H.5.
 - `GPR=R_g I_G=779,9921 V`, frente a **780,0 V** publicados.
-- En un intento independiente con `d=0,0105 m`, `n=6`, §16.5, la recomputación dio **`E_m=221,1693 V`** y **`E_s=91,6827 V`**; la tabla H.5 consigna **232 V y 96 V**, respectivamente. Diferencias de **4,67 %** y **4,50 %**. **No reconciliadas**; hipótesis y criterios de cálculo de la tabla necesitan un examen adicional antes de usarlos como prueba de aceptación.
+- En un intento independiente con `d=0,0105 m`, `n=6`, §16.5, la recomputación dio **`E_m=221,1693 V`** y **`E_s=91,6827 V`**; la tabla H.5 consigna **232 V y 96 V**, respectivamente. Diferencias de **4,67 %** y **4,50 %**. **Reconciliadas aritméticamente**: con 780 A las mismas ecuaciones dan 231,622 V y 96,016 V, que redondean a la tabla H.5. La figura y la introducción H.3 exigen 744,8 A. H.6 muestra la misma corriente implícita 780 A en otra geometría; ver diagnóstico.
 - La tabla H.5 muestra asimismo un benchmark de otro programa (CDEGS): resistencia **1,00 Ω**, tensión en punto T1 **194,9 V** y paso S1 **89,3 V**, frente a **1,05 Ω, 232 V y 96 V** en columna IEEE. La comparación caracteriza **diferencias entre métodos** en puntos seleccionados, no un error exacto ni una tolerancia admisible.
 
-**Estado F:** reproducción de `R_g/GPR` **coherente**; reproducción de `E_m/E_s` **DISCREPANTE**; contraste comercial **informativo, no reproducido**.
+**Estado F ACTUALIZADO:** `R_g/GPR` coherentes con 744,8 A, mientras que las columnas de tensiones H.5/H.6 reproducen 780 A; **inconsistencia de datos de referencia explicada**. Los resultados de programas comerciales siguen sin reproducirse.
 
 ## G. Evaluación del avance y límites
 
 | Identificador | Comprobación | Resultado | Estado |
 |---|---|---|---|
 | V-01 | Térmica cobre B.1 | 34,0167 vs 34,02 kcmil | Coherente |
-| V-02 | Térmica cobre-acero B.1 | 65,905 vs 59,81 kcmil | **Discrepante / bloqueo** |
+| V-02 | Térmica cobre-acero B.1 | 65,905 vs 59,81 kcmil | **Resuelto aritméticamente:** 6,814 vs 6,184 kA |
 | V-03 | `K_f` 30 % a 1084 °C | 12,0669 vs 12,06 | Coherente |
 | V-04 | `D_f`, cinco celdas tabla 10 | diferencias absolutas inferiores a 0,0003 | Coherente en 60 Hz |
 | V-05 | `S_f` ejemplo §15.9 | 0,3671 vs 0,37 redondeado | Coherente |
 | V-06 | Schwarz / matriz y escalamiento | 8,5201 Ω = inversión matricial | Comprobación algebraica; sin patrón independiente |
 | V-07 | IEEE81 Wenner/H.1 | H.1 reproducida con `2πaR`; prueba de profundidad | Coherente y advertencia de dominio |
 | V-08 | H.3 Grid 1 resistencia y GPR | 1,04725 Ω / 779,992 V vs 1,05 Ω / 780 V | Coherente |
-| V-09 | H.3 Grid 1 tensión malla/paso | 221,17/91,68 V vs 232/96 V | **Discrepante / bloqueo** |
+| V-09 | H.3 Grid 1 tensión malla/paso | 221,17/91,68 V vs 232/96 V | **Resuelto aritméticamente:** 744,8 vs 780 A; confirmado también en Grid 2 |
 
-**Próximos estudios sin cierre automático:** resolver V-02 y V-09; curvas y parámetros completos de Schwarz; `S_f` para sistemas con fuentes locales/remotas y anexo H.4; modelos de dos/múltiples capas y su interpretación independiente; ensayos de sensibilidad/casos límites y condiciones especiales (cercos/GIS/tensiones transferidas); contraste con exigencias SEC y sus textos complementarios; pruebas reales de campo solo mediante personal competente. El cumplimiento no se define por coincidencia de un par de fórmulas.
+**Próximos estudios sin cierre automático:** conservar V-02/V-09 como advertencias de referencia editorial, sin volver a tratarlos como fallas de fórmula; curvas y parámetros completos de Schwarz; `S_f` para sistemas con fuentes locales/remotas y anexo H.4; modelos de dos/múltiples capas y su interpretación independiente; ensayos de sensibilidad/casos límites y condiciones especiales (cercos/GIS/tensiones transferidas); contraste con exigencias SEC y sus textos complementarios; pruebas reales de campo solo mediante personal competente. El cumplimiento no se define por coincidencia de un par de fórmulas.
 
 **Gobierno del proyecto:** etapa 0 **ABIERTA**; etapa 1 **EN CURSO**; **sin motor implementado**. Las pruebas anteriores son un instrumento de estudio, no una función de producto. El optimizador físico de dimensiones/reticulado sigue reservado a la etapa 10.
