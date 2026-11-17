@@ -2,7 +2,7 @@
 
 > **Versión:** 0.1 — planificación inicial.  
 > **Documento rector:** [README.md](./README.md). Bitácora de continuidad: [AVANCE.md](./AVANCE.md).  
-> **Estado global:** planificación. **No se ha iniciado la lectura detallada de IEEE Std 80.**  
+> **Estado global:** etapa 0 ABIERTA; etapa 1 EN ESTUDIO (documentos recibidos, lectura y comprobaciones parciales). Sin motor implementado ni validado.  
 > **Orden:** las etapas se cierran con evidencia, no solo con código. **La etapa 10, optimizador del diseño físico, es la última.**
 
 ## Cómo usar este roadmap
@@ -64,6 +64,14 @@
 - **Pruebas exploratorias:** diez comparaciones numéricas del anexo B.1–B.4 (R_g, E_m, E_s), consistencia Wenner IEEE 81, efecto de redondeo de C_s y una comprobación de conductor de cobre. **No validan el motor ni certifican cumplimiento**.
 - **Hallazgo crítico abierto:** discrepancia aritmética de la alternativa de conductor cobre-acero del anexo B.1: valor publicado 59,81 kcmil frente a ≈65,90 kcmil al sustituir literalmente las constantes. No usarla como referencia de validación hasta resolverla.
 - **Estado de cierre:** etapa 0 sigue abierta; etapa 1 iniciada pero NO cerrada. Mantener casillas pendientes hasta verificar todos sus criterios.
+
+### Continuación de las verificaciones — 2026-11-17
+
+Se publicó y cotejó en `main` el [conocimiento consolidado](./docs/estudios/CONOCIMIENTO_CONSOLIDADO_ETAPA1.md), la [bitácora de comprobaciones adicionales](./docs/estudios/VERIFICACIONES_ADICIONALES_ETAPA1_2026-11-17.md) y un [script autónomo de pruebas exploratorias](./docs/estudios/pruebas_exploratorias_2026_11_17.py) (no es motor del producto).
+
+**Comprobado con evidencia aritmética parcial:** térmica cobre ec. (47); `K_f` de 30 % cobre-acero a 1084 °C; cinco valores de `D_f` frente a tabla 10; reparto `S_f` en el ejemplo simplificado de §15.9; Schwarz sintético y consistencia de su matriz de resistencias; Wenner con control de profundidad y registros seleccionados de H.1; resistencia/GPR del benchmark H.3.1.
+
+**No resuelto / bloqueante:** resultado de cobre-acero del anexo B.1 (59,81 kcmil publicado frente a ≈65,905 de sustitución directa) y tensiones `E_m/E_s` del anexo H.3.1 (diferencia ≈4,5–4,7 % en reconstrucción). Siguen pendientes validaciones independientes, modelos de capas, factores de reparto de redes complejas, límites de dominio, casos especiales y correlato con normativa chilena. **No se marca cierre de etapa 0 ni etapa 1 y no se autorizan funciones de ingeniería.**
 
 ## Etapa 2 — Modelo de datos, flujo y prototipo mínimo
 
