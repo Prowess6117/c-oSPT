@@ -3,7 +3,7 @@
 > **Proyecto / repositorio:** [c-oSPT](https://github.com/Prowess6117/c-oSPT)  
 > **Nombre funcional provisional:** MallaTierra  
 > **Última actualización:** 2026-11-17  
-> **Etapa activa:** 0 — Definición, repositorio y seguridad de base (**EN CURSO; no cerrada**)  
+> **Etapa activa:** 0 — Definición, repositorio y seguridad de base (**EN CURSO; 7/8 tareas verificadas documentalmente**)  
 > **Etapa 1 — estudio normativo:** CERRADA DOCUMENTALMENTE (solo subalcance de método definido; no motor ni validación integral)  
 > **Cálculos del motor implementados y validados:** NINGUNO; únicamente pruebas matemáticas exploratorias externas al motor  
 > **Naturaleza del documento:** síntesis de continuidad; no es una transcripción completa del chat.
@@ -22,7 +22,7 @@ La fuente de verdad está repartida de forma deliberada:
 
 ## 2. Objetivo original que NO debemos perder
 
-Construir una herramienta **personal de ingeniería eléctrica en Chile** para plantear, calcular, verificar y documentar **mallas de puesta a tierra** con base principal en **IEEE Std 80 (edición por confirmar)** y las normas chilenas que realmente correspondan al caso.
+Construir una herramienta **personal de ingeniería eléctrica en Chile** para plantear, calcular, verificar y documentar **mallas de puesta a tierra** con base principal en **IEEE Std 80-2013 con Cor 1-2015 (ejemplar identificado)** y las normas chilenas que realmente correspondan al caso.
 
 Se prevé una **aplicación web instalable (PWA), local-first, sin backend propio por defecto**, con código fuente público en GitHub y datos de proyectos tratados localmente y de manera privada. El objetivo es acceder al código y continuar el desarrollo desde diferentes computadores; **GitHub no es almacenamiento automático de los estudios eléctricos privados**.
 
@@ -36,7 +36,7 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 2. `README.md` y `ROADMAP.md` se subieron correctamente y su presencia fue comprobada directamente en GitHub.
 3. La **etapa 0 está parcialmente realizada**, no finalizada: se documentaron objetivos y etapas y se creó el repositorio, pero faltan medidas y definiciones indicadas en ROADMAP.
 4. El usuario aportó **IEEE Std 80-2013 con Cor 1-2015** (ejemplar publicado 15-05-2015) e **IEEE Std 81-2012**, además de RIC N°06 y RPTD N°06. Ninguno de los PDF se publicó en GitHub.
-5. **La etapa 1 está iniciada, NO cerrada**; hay matriz documental preliminar y pruebas exploratorias de ejemplos sintéticos, pero no se ha implementado el motor ni realizado validación técnica independiente integral.
+5. **Actualización vigente:** la etapa 1 fue **cerrada documentalmente solo para el subalcance limitado** (véase hito de cierre posterior en esta misma bitácora); **no** hay motor implementado ni validación computacional integral. Las notas previas de «etapa 1 iniciada» corresponden a un estado histórico anterior.
 6. No se subieron archivos de normas, mediciones reales, expedientes técnicos, credenciales ni datos privados al repositorio en esta preparación documental.
 
 ## 4. Decisiones y criterios registrados
@@ -55,11 +55,11 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 ## 5. Pendientes y límites NO confirmados
 
 - **Edición recibida:** IEEE Std 80-2013 con Cor 1-2015, confirmada en portada; quedan pendientes erratas posteriores, estudio exhaustivo de métodos/restricciones y controles normativos complementarios.
-- **Primer campo de aplicación:** subestaciones, instalaciones industriales/consumo u otros casos; pendiente de delimitar para no extender IEEE 80 fuera de su campo.
+- **Campo inicial de implementación:** delimitado a subestaciones exteriores CA, malla regular y suelo uniforme justificado en [alcance inicial](./docs/ETAPA0_ALCANCE_INICIAL.md). Aplicabilidad concreta a un proyecto, verificaciones especiales y ampliaciones siguen por determinar.
 - **Normativa chilena concreta, exigencias y numerales aplicables:** revisar RIC / RPTD y otros textos pertinentes sin inventar referencias.
-- **Herramientas de programación y pruebas:** no elegidas todavía.
+- **Arquitectura comparada:** PWA web estática local-first preferida según [ADR-0001](./docs/ADR-0001_ARQUITECTURA_INICIAL.md); versiones concretas y dependencias aún no elegidas.
 - **Mediciones, modelos geoléctricos, parámetros eléctricos, geometrías de cálculo, tolerancias y casos patrón:** aún no definidos.
-- **Política de datos reales, persistencia/cifrado, `.gitignore`, licencia, protección de ramas y revisión de secretos:** faltan definiciones y configuraciones.
+- **Política y exclusiones:** [datos](./docs/POLITICA_DATOS.md), `.gitignore`, [SECURITY](./SECURITY.md) y [CONTRIBUTING](./CONTRIBUTING.md) redactados. Persistencia/cifrado de la app sigue para etapas posteriores. **Pendiente** licencia, protección de `main`, privacidad de autor y auditoría suficiente de secretos/historial.
 - **Publicación en GitHub Pages:** no aprobada; depende de futura auditoría de seguridad.
 - **Algoritmo del optimizador:** pendiente de análisis de fundamentos matemáticos, restricciones y validez del motor.
 
@@ -135,13 +135,31 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 
 **Próxima acción única:** resolver las cinco tareas pendientes de etapa 0 (alcance productivo formal, `.gitignore`/licencia/secretos, datos reales, procedimiento de revisiones y decisiones tecnológicas), luego etapa 2. **Optimizador físico: etapa 10**.
 
+## 7 sexies. Procedimientos preventivos de etapa 0 — 2026-11-17
+
+**Objetivo:** resolver las cinco tareas que el ROADMAP mantenía abiertas, sin inventar licencias ni marcar como activadas configuraciones que dependen de la cuenta del propietario.
+
+**Entregables creados o actualizados:**
+- [Alcance de v0.1](./docs/ETAPA0_ALCANCE_INICIAL.md): subestaciones exteriores CA, malla rectangular/cuadrada, reticulado uniforme y suelo uniforme justificado; sin veredicto integral para riesgos excluidos.
+- [.gitignore](./.gitignore) y [SECURITY.md](./SECURITY.md): prevención y tratamiento de incidentes; no retroactivos.
+- [Política de datos](./docs/POLITICA_DATOS.md): información pública vs. privada y flujo local.
+- [CONTRIBUTING.md](./CONTRIBUTING.md): trabajo mediante rama/PR, controles previos y pruebas.
+- [ADR-0001](./docs/ADR-0001_ARQUITECTURA_INICIAL.md): comparación de escritorio, backend y PWA; preferencia PWA estática; versiones/dependencias diferidas.
+- [Auditoría preliminar](./docs/ETAPA0_AUDITORIA_SEGURIDAD.md): alcance, observaciones y acciones manuales.
+
+**Comprobaciones de lectura del GitHub actual:** repositorio público; rama `main` no protegida al comenzar; árbol vigente sin archivos PDF ni planillas; examen limitado de 12 archivos sin patrones evidentes de credenciales en su contenido; se detectó correo personal de autor en metadatos de commits anteriores (no reproducido); los aparentes pares de coordenadas correspondieron a valores matemáticos de pruebas en los contextos revisados. **No** es escaneo íntegro del historial, ni auditoría forense, ni demuestra ausencia absoluta de secretos.
+
+**Dictamen documental de etapa 0:** 7/8 tareas marcables con evidencia. La tarea compuesta de licencia, protección/privacidad y controles de secretos permanece **ABIERTA** hasta decisiones y ajustes efectivos del propietario. El objetivo del cálculo y el optimizador final no cambian. Ninguna función eléctrica del producto existe todavía.
+
+**Próximas acciones externas:** elegir expresamente licencia o ausencia de licencia abierta; configurar correos `noreply` y privacidad de commits; proteger `main`; activar/comprobar controles de seguridad disponibles; volver a verificar y registrar el cierre antes de avanzar a etapa 2.
+
 ## 8. Próximos pasos (máximo cinco)
 
-1. Completar las tareas pendientes de **etapa 0** (alcance inicial, reglas de seguridad y repositorio), sin inventar criterios normativos.
-2. Respetar el **cierre documental acotado de etapa 1** y sus bloqueos; no ampliar métodos antes de fundamentarlos y validarlos.
-3. Delimitar el primer tipo de instalación y las verificaciones chilenas realmente aplicables.
-4. Registrar cada decisión metodológica con fuente, condiciones, estado y prueba pendiente.
-5. Actualizar esta bitácora y ROADMAP al concluir la próxima sesión técnica importante.
+1. Confirmar la licencia de código deseada o conservar derechos sin licencia abierta, con conocimiento de la consecuencia pública.
+2. Ajustar privacidad del correo de autor y bloqueo de pushes en GitHub; considerar metadatos de commits anteriores.
+3. Proteger la rama `main` y activar/revisar herramientas de alerta y protección de secretos disponibles.
+4. Verificar las acciones y la publicación de los archivos de etapa 0; cerrar la última casilla solo con evidencia.
+5. Mantener el cierre documental limitado de etapa 1 y luego pasar a etapa 2; **motor e informe no implementados**, optimizador reservado a etapa 10.
 
 ## 9. Procedimiento de «backup» de continuidad
 
