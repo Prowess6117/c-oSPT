@@ -85,7 +85,7 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 - **Fuente pública:** [Estudio normativo de IEEE 80, IEEE 81, RIC N°06 y RPTD N°06](./docs/estudios/ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md).
 - **Identificación bibliográfica:** IEEE Std 80-2013 incorporando Cor 1-2015; IEEE Std 81-2012. PDF recibidos y leídos localmente, **no subidos**.
 - **Trabajo efectuado:** matriz de dependencias y referencias para procedimientos de suelo, corriente de falla/reparto, límites tolerables, resistencia, GPR, tensiones de malla/paso, ensayos y obligaciones RIC/RPTD. Comprobaciones matemáticas exploratorias: diez contrastes de valores anexo B.1–B.4, un ejemplo Wenner, efecto de redondeo de C_s y ejemplo térmico de cobre.
-- **Resultado y cautela:** diez magnitudes B.1–B.4 con discrepancias de 0,038 % a 1,200 % respecto de valores editoriales; **no es prueba independiente de validación del motor**. Se identificó discrepancia aún sin explicación en otro cálculo térmico del anexo B.1 (59,81 vs ~65,90 kcmil). Debe estudiarse antes de utilizarlo como prueba.
+- **Resultado histórico y revisión:** diez magnitudes B.1–B.4 con diferencias de 0,038 % a 1,200 %; no validan el motor. La diferencia térmica B.1 (59,81 vs 65,905 kcmil) fue posteriormente explicada por corriente implícita 6,184 vs 6,814 kA; ver nuevo diagnóstico.
 - **Cambios GitHub:** nuevo documento Markdown propio y registro de continuidad; ningún PDF, dato privado ni código numérico publicado.
 - **Pendientes:** cerrar etapa 0 (alcance/seguridad), examinar sistemáticamente correcciones y métodos, validar térmica/Schwarz/D_f/S_f/modelos estratificados/anexo H, obtener documentos chilenos complementarios y estudiar registros de mediciones; no desarrollar motor aún.
 - **Estado:** etapa 0 en curso; etapa 1 iniciada, **NO cerrada**; etapa 10 optimizador continúa como última etapa.
@@ -99,14 +99,24 @@ El flujo funcional previsto es: antecedente de resistividad (inicialmente analiz
 
 **Pruebas aritméticas documentadas:** térmica de cobre y `K_f` en material compuesto; cinco valores de `D_f` y efecto de 50/60 Hz; caso simplificado `S_f` de IEEE80 §15.9; Schwarz homogéneo con verificación de matriz y proporcionalidad; Wenner de IEEE81 con control `b/a` y valores seleccionados del benchmark H.1; resistencia/GPR del benchmark H.3.1. Los resultados coherentes corresponden solo a los ejemplos y condiciones especificados, **no validan un motor**.
 
-**Discrepancias abiertas:** B.1 acero recubierto de cobre 30 %: `59,81` vs `≈65,905 kcmil`; H.3.1 tensión de malla/paso: `232/96 V` impresos frente a `≈221,17/91,68 V` reconstruidos. No atribuir causa ni alterar cifras sin evidencia.
+**Discrepancias matemáticamente explicadas en estudio posterior:** B.1 `59,81 kcmil` requiere I≈6,184 kA y no I=6,814 kA; H.5/H.6 `E_m/E_s` publicados corresponden a I≈780 A, en lugar de 744,8 A indicada en H.3. Estudiadas con inversión y doble geometría; no es fe de erratas oficial.
 
 **Bloqueos:** seguridad y primer alcance de etapa 0; validación integral de IEEE80 §§11/13–17 y anexos H/C; interpretación estratificada y estudio geoléctrico independiente; ejemplos de redes complejas `S_f`; referencia oficial y documentos complementarios chilenos. **Etapa 0 ABIERTA, etapa 1 EN CURSO, etapa 10 última, motor NO iniciado.**
+
+## 7 quater. Resolución matemática de inconsistencias — 2026-11-17
+
+**Informe publicado:** [DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md](./docs/estudios/DIAGNOSTICO_RESUELTO_B1_H3_2026-11-17.md). **Código de reproducción:** [diagnostico_inconsistencias_ieee80.py](./docs/estudios/diagnostico_inconsistencias_ieee80.py).
+
+**Verificación desde páginas originales del PDF IEEE80-2013/Cor1-2015:**
+- **B.1:** ecuación (46) con I=6,814 kA → 65,904981 kcmil (≈33,3945 mm²). El valor editorial 59,81 kcmil sale de introducir 6,184 kA → 59,811624 kcmil. Se demuestra sustitución/transposición numérica; causa editorial histórica no ratificada.
+- **H.3:** introducción y figuras H.3/H.4 fijan I_G=744,8 A. Ecuaciones (85)–(99) en Grid 1 → E_m≈221,169 V y E_s≈91,683 V; en Grid 2 → 155,266 y 76,251 V. Usando **780 A** se obtienen 231,622/96,016 V (H.5: 232/96,0) y 162,604/79,855 V (H.6: 163/80). Los GPR H.5/H.6 sí corresponden a 744,8 A.
+- **Conclusión:** B.1 y H.3 **RESUELTAS MATEMÁTICAMENTE** sin cambiar fórmulas; hallazgo de probable inconsistencia editorial en valores impresos. No hay errata oficial acreditada ni validación del futuro motor.
+- **Estado global:** etapa 0 ABIERTA, etapa 1 EN CURSO por otros procedimientos y controles; sin funciones de ingeniería en producción.
 
 ## 8. Próximos pasos (máximo cinco)
 
 1. Completar las tareas pendientes de **etapa 0** (alcance inicial, reglas de seguridad y repositorio), sin inventar criterios normativos.
-2. Continuar las **comprobaciones de etapa 1** sobre IEEE80-2013/Cor1-2015 e IEEE81-2012; resolver discrepancias térmica y benchmark H.3.
+2. Continuar las **comprobaciones de etapa 1** IEEE80/81, utilizando el diagnóstico matemático de B.1/H.3 ya resuelto y abordando métodos/casos de validación aún faltantes.
 3. Delimitar el primer tipo de instalación y las verificaciones chilenas realmente aplicables.
 4. Registrar cada decisión metodológica con fuente, condiciones, estado y prueba pendiente.
 5. Actualizar esta bitácora y ROADMAP al concluir la próxima sesión técnica importante.
