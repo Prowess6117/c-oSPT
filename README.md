@@ -9,7 +9,7 @@
 
 Desarrollar una aplicación **web instalable (PWA), local-first y, en lo posible, funcional sin conexión**, para ingresar antecedentes, dimensionar y verificar mallas de puesta a tierra, comparar alternativas y generar **informes técnicos trazables**.
 
-El fundamento técnico principal será **IEEE Std 80, edición exacta pendiente de confirmar con el ejemplar que aportará el usuario**. Se revisará su campo de aplicación y su relación con la normativa chilena pertinente a cada caso. **No se asumirá que IEEE 80 es aplicable indiscriminadamente a cualquier instalación eléctrica.**
+El fundamento técnico principal será **IEEE Std 80-2013, según ejemplar recibido que incorpora Cor 1-2015**. La identificación del ejemplar está confirmada; el estudio exhaustivo de sus métodos, sus eventuales erratas posteriores y la vigencia para proyectos reales continúan abiertos. Se revisará su campo de aplicación y su relación con la normativa chilena pertinente a cada caso. **No se asumirá que IEEE 80 es aplicable indiscriminadamente a cualquier instalación eléctrica.**
 
 El objetivo es construir una **herramienta de cálculo auditable**, no una caja negra que entregue una respuesta sin justificarla. El desarrollo prioriza, en este orden:
 
@@ -135,15 +135,25 @@ Entregables finales previstos:
 
 ## 9. Decisiones pendientes
 
-1. **Edición exacta de IEEE Std 80**: se confirmará al recibir el archivo del usuario. Hasta entonces, no se implementarán fórmulas atribuidas a esa edición.
+1. **Edición del ejemplar IEEE Std 80**: identificada como **IEEE Std 80-2013 con Cor 1-2015** (PDF publicado en mayo de 2015). **Pendientes:** estudio exhaustivo, correcciones/vigencia posteriores si las hubiera y validación independiente; no se ha implementado un motor.
 2. **Primer tipo de instalación objetivo**: se definirá conforme al alcance real del documento y la normativa chilena aplicable; no se extrapolará a BT/MT/AT automáticamente.
 3. **Datos técnicos mínimos, unidades y casos de prueba de referencia**: a definir durante la lectura y modelación.
 4. **Repositorio público y publicación web**: GitHub será la fuente del código; habilitar un sitio público será una decisión separada, condicionada a revisión de seguridad.
 5. **Persistencia/cifrado de proyectos**: se decidirá a partir de la sensibilidad real de los datos y un modelo de amenazas práctico.
 
+### Registro de fundamentos y comprobaciones (etapa 1)
+
+El material de investigación se conserva en `docs/estudios/`:
+- [Estudio normativo inicial IEEE80/81 y RIC/RPTD](./docs/estudios/ESTUDIO_NORMATIVO_IEEE80_IEEE81_RIC06_RPTD06.md)
+- [Conocimiento consolidado de la etapa 1](./docs/estudios/CONOCIMIENTO_CONSOLIDADO_ETAPA1.md)
+- [Comprobaciones adicionales, discrepancias y límites](./docs/estudios/VERIFICACIONES_ADICIONALES_ETAPA1_2026-11-17.md)
+- [Script autónomo de comprobaciones exploratorias](./docs/estudios/pruebas_exploratorias_2026_11_17.py)
+
+**Es investigación, no un motor validado.** PDFs IEEE/SEC, mediciones privadas y expedientes reales no se incorporan al repositorio. Para el estado efectivo, consultar ROADMAP y AVANCE vigentes.
+
 ## 10. Referencias para la planificación
 
-- [IEEE Standards Association — IEEE Std 80](https://standards.ieee.org/ieee/80/4089/) — referencia de alcance; **el contenido normativo específico queda pendiente de lectura en la edición aportada**.
+- [IEEE Standards Association — IEEE Std 80](https://standards.ieee.org/ieee/80/4089/) — referencia institucional; se dispone del ejemplar IEEE80-2013/Cor1-2015 para lectura privada, y el estudio/validación aún no está cerrado.
 - [GitHub Docs — What is GitHub Pages?](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages) — publicación estática y tratamiento de IP de visitantes.
 - [MDN — Making PWAs installable](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable) — requisitos de instalación de una PWA.
 - Normativa chilena: documentos RIC, RPTD y disposiciones complementarias que correspondan, **por revisar y citar con precisión** según el alcance definitivo.
